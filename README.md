@@ -2,7 +2,7 @@
 
 A Markdown Processor Library for Delphi, to process/convert markdown files to HTML.
 
-**Latest Version 1.0.1 - 2 Jan 2024**
+**Latest Version 1.1.0 - 16 Dec 2024**
 
 ============
 
@@ -80,8 +80,8 @@ An integrated help system based on files in Markdown format (and also html), for
 
 ## Release Notes ##
 
-2 Jan 2024: ver. 1.0.1
-- Updated Copyright
+16 Dec 2024: ver. 1.1.0
+- Updated Demo for FireMonkey
 
 22 Oct 2023: ver. 1.0.0
 - Project forked from FPC-markdown by Miguel A. Risco-Castillo

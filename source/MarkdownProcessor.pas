@@ -55,7 +55,10 @@ Unit MarkdownProcessor;
 interface
 
 uses
-  Classes, SysUtils, MarkdownUtils;
+  System.Classes
+  , System.SysUtils
+  , MarkdownUtils
+  ;
 
 Type
 
@@ -70,7 +73,7 @@ Type
   public
     class function CreateDialect(dialect : TMarkdownProcessorDialect) : TMarkdownProcessor;
     function process(source : String) : String; virtual; abstract;
-    function processFile(source: String): String; virtual;
+    function processFile(source: String; Encoding: TEncoding = nil): String; virtual;
     property config: TConfiguration read FConfig write FConfig;
     // when AllowUnsafe = true, then the processor can create scripts etc.
     property AllowUnsafe : boolean read GetAllowUnSafe write SetAllowUnSafe;
@@ -79,9 +82,10 @@ Type
 implementation
 
 uses
-  MarkdownDaringFireball,
-  MarkdownCommonMark,
-  MarkdownTxtMark;
+  MarkdownDaringFireball
+  , MarkdownCommonMark
+  , MarkdownTxtMark
+  ;
 
 { TMarkdownProcessor }
 
@@ -96,14 +100,14 @@ begin
   end;
 end;
 
-function TMarkdownProcessor.processFile(source: String): String;
+function TMarkdownProcessor.processFile(source: String; Encoding: TEncoding): String;
 var
   markdown:TStringList;
 begin
   result:='';
   markdown := TStringList.Create;
   try
-    markdown.LoadFromFile(source);
+    markdown.LoadFromFile(source, Encoding);
     result:=process(markdown.Text);
   finally
     if assigned(markdown) then markdown.Free;

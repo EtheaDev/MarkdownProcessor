@@ -1,0 +1,101 @@
+<style type="text/css">
+code{
+  font-family: "Consolas", monospace;
+}
+pre{
+  border: 1px solid #ddd;
+  border-left: 3px solid #f36d33;
+  overflow: auto;
+  padding: 1em 1.5em;
+  display: block;
+}
+Blockquote{
+  border-left: 3px solid #d0d0d0;
+  padding-left: 0.5em;
+  margin-left:1em;
+}
+Blockquote p{
+  margin: 0;
+}
+table{
+  border:1px solid;
+  border-collapse:collapse;
+}
+th{  padding:5px;
+  border:1px solid;
+}
+td{
+  padding:5px;
+  border:1px solid;
+}
+</style>
+<h1>Markdown Processor <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg" alt="License"/></a></h1>
+<p>A Markdown Processor Library for Delphi, to process/convert markdown files to HTML.</p>
+<p><strong>Latest Version 1.1.0 - 16 Dec 2024</strong></p>
+<p><mark></mark><mark></mark><mark></mark></p>
+<h2>Basic Information</h2>
+<p>This is a Pascal (Delphi) library that processes markdown to HTML.
+At present the following dialects of markdown are supported:</p>
+<ul>
+<li>The Daring Fireball dialect
+(see <a href="https://daringfireball.net/projects/markdown/">https://daringfireball.net/projects/markdown/</a>)</li>
+<li>Almost complete support for CommonMark dialect
+(translated from <a href="http://commonmark.org/">http://commonmark.org/</a>)</li>
+<li>Enhanced TxtMark dialect
+(translated from <a href="https://github.com/rjeschke/txtmark">https://github.com/rjeschke/txtmark</a>)</li>
+</ul>
+<h2>Using the Library with Delphi</h2>
+<p>Declare a variable of the class TMarkdownProcessor:</p>
+<pre><code class="Pascal">     var
+       md : TMarkdownProcessor;
+</code></pre>
+<p>Create a TMarkdownProcessor (MarkdownProcessor.pas) of the dialect you want:</p>
+<pre><code class="Pascal">       md := TMarkdownProcessor.createDialect(mdDaringFireball)
+</code></pre>
+<p>Decide whether you want to allow active content</p>
+<pre><code class="Pascal">       md.AllowUnSafe := true;
+</code></pre>
+<p>Note: you should only set this to true if you <em>need</em> to - active content can be a significant safety/security issue.<br /></p>
+<p>Generate HTML fragments from Markdown content:</p>
+<pre><code class="Pascal">       html := md.process(markdown); 
+</code></pre>
+<p>Note that the HTML returned is an HTML fragment, not a full HTML page.<br /></p>
+<p>Do not forget to dispose of the object after the use:</p>
+<pre><code class="Pascal">       md.free
+</code></pre>
+<p>Large rework was made for adding support for tables, math formulas, etc.</p>
+<h2>Examples</h2>
+<p>this library is used in two projects:</p>
+<ul>
+<li><a href="https://github.com/EtheaDev/MarkdownShellExtensions">MarkdownShellExtensions</a></li>
+</ul>
+<p>A collection of tools for markdown files, to edit and view content, with an advanced Editor:</p>
+<p><img src="./images/MDTextEditorLight.png" alt="Markdown Text Editor"/></p>
+<ul>
+<li><a href="https://github.com/EtheaDev/MarkdownHelpViewer">MarkdownHelpViewer</a></li>
+</ul>
+<p>An integrated help system based on files in Markdown format (and also html), for Delphi applications:</p>
+<p><img src="./images/ContentPage.png" alt="Markdown HelpViewer"/></p>
+<h2>Release Notes</h2>
+<p>16 Dec 2024: ver. 1.1.0</p>
+<ul>
+<li>Updated Demo for FireMonkey</li>
+</ul>
+<p>11 Oct 2023: ver. 1.0.0</p>
+<ul>
+<li>Project forked from FPC-markdown by Miguel A. Risco-Castillo</li>
+<li>Removed unused Dialect mdAsciiDoc</li>
+<li>changed position of enumerated dialect mdCommonMark for backward compatibility with Delphi-Markdown</li>
+</ul>
+<h2>License</h2>
+<p>Copyright (c) Ethea S.r.l.</p>
+<p>Licensed under the Apache License, Version 2.0 (the &ldquo;License&rdquo;);</p>
+<p>you may not use this file except in compliance with the License.</p>
+<p>You may obtain a copy of the License at</p>
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &ldquo;AS IS&rdquo; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+<h2>Contributors</h2>
+<p>MarkdownProcessor implementation is a fork of FPC-markdown by <strong>Miguel A. Risco-Castillo</strong>
+<a href="https://github.com/mriscoc/fpc-markdown">FPC-markdown</a></p>
+<p>FPC-markdown implementation is a fork of <strong>Grahame Grieve</strong> pascal port
+<a href="https://github.com/grahamegrieve/delphi-markdown">Delphi-markdown</a></p>
