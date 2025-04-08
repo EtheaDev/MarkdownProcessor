@@ -3,7 +3,7 @@
 {       MarkDown Processor                                                     }
 {       Delphi version of FPC-markdown by Miguel A. Risco-Castillo             }
 {                                                                              }
-{       Copyright (c) 2022-2024 (Ethea S.r.l.)                                 }
+{       Copyright (c) 2022-2025 (Ethea S.r.l.)                                 }
 {       Author: Carlo Barazzetta                                               }
 {                                                                              }
 {       https://github.com/EtheaDev/MarkdownProcessor                          }
@@ -69,7 +69,7 @@ type
   public
     Constructor Create;
     Destructor Destroy; override;
-    function process(source: String): String; override;
+    function Process(const ASource: string): string; override;
   end;
 
 implementation
@@ -115,14 +115,14 @@ begin
   root.split(root.lineTail).type_ := btLIST_ITEM;
 end;
 
-function TMarkdownDaringFireball.process(source: String): String;
+function TMarkdownDaringFireball.Process(const ASource: string): string;
 var
   out_: TStringBuilder;
   parent, block: TBlock;
   rdr : TMarkdownReader;
 begin
   FuseExtensions := Config.isDialect([mdTxtMark,mdCommonMark]);
-  rdr := TMarkdownReader.Create(source);
+  rdr := TMarkdownReader.Create(ASource);
   try
     out_ := TStringBuilder.Create;
     try

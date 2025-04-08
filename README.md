@@ -2,7 +2,7 @@
 
 A Markdown Processor Library for Delphi, to process/convert markdown files to HTML.
 
-**Latest Version 1.1.0 - 16 Dec 2024**
+**Latest Version 1.2.0 - 08 Apr 2025**
 
 ============
 
@@ -48,11 +48,11 @@ Note: you should only set this to true if you *need* to - active content can be 
 Generate HTML fragments from Markdown content:
 
 ```Pascal
-       html := md.process(markdown); 
+       html := md.process(markdown);
 ```
-  
-Note that the HTML returned is an HTML fragment, not a full HTML page.  
-  
+
+Note that the HTML returned is an HTML fragment, not a full HTML page.
+
 Do not forget to dispose of the object after the use:
 
 ```Pascal
@@ -79,6 +79,9 @@ An integrated help system based on files in Markdown format (and also html), for
 ![Markdown HelpViewer](./images/ContentPage.png)
 
 ## Release Notes ##
+
+08 Apr 2025: ver. 1.2.0
+- Fixed const parameters
 
 16 Dec 2024: ver. 1.1.0
 - Updated Demo for FireMonkey

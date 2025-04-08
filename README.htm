@@ -31,7 +31,7 @@ td{
 </style>
 <h1>Markdown Processor <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg" alt="License"/></a></h1>
 <p>A Markdown Processor Library for Delphi, to process/convert markdown files to HTML.</p>
-<p><strong>Latest Version 1.1.0 - 16 Dec 2024</strong></p>
+<p><strong>Latest Version 1.2.0 - 08 Apr 2025</strong></p>
 <p><mark></mark><mark></mark><mark></mark></p>
 <h2>Basic Information</h2>
 <p>This is a Pascal (Delphi) library that processes markdown to HTML.
@@ -57,9 +57,9 @@ At present the following dialects of markdown are supported:</p>
 </code></pre>
 <p>Note: you should only set this to true if you <em>need</em> to - active content can be a significant safety/security issue.<br /></p>
 <p>Generate HTML fragments from Markdown content:</p>
-<pre><code class="Pascal">       html := md.process(markdown); 
+<pre><code class="Pascal">       html := md.process(markdown);
 </code></pre>
-<p>Note that the HTML returned is an HTML fragment, not a full HTML page.<br /></p>
+<p>Note that the HTML returned is an HTML fragment, not a full HTML page.</p>
 <p>Do not forget to dispose of the object after the use:</p>
 <pre><code class="Pascal">       md.free
 </code></pre>
@@ -77,11 +77,15 @@ At present the following dialects of markdown are supported:</p>
 <p>An integrated help system based on files in Markdown format (and also html), for Delphi applications:</p>
 <p><img src="./images/ContentPage.png" alt="Markdown HelpViewer"/></p>
 <h2>Release Notes</h2>
+<p>08 Apr 2025: ver. 1.2.0</p>
+<ul>
+<li>Fixed const parameters</li>
+</ul>
 <p>16 Dec 2024: ver. 1.1.0</p>
 <ul>
 <li>Updated Demo for FireMonkey</li>
 </ul>
-<p>11 Oct 2023: ver. 1.0.0</p>
+<p>22 Oct 2023: ver. 1.0.0</p>
 <ul>
 <li>Project forked from FPC-markdown by Miguel A. Risco-Castillo</li>
 <li>Removed unused Dialect mdAsciiDoc</li>

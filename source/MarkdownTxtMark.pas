@@ -3,7 +3,7 @@
 {       MarkDown Processor                                                     }
 {       Delphi version of FPC-markdown by Miguel A. Risco-Castillo             }
 {                                                                              }
-{       Copyright (c) 2022-2024 (Ethea S.r.l.)                                 }
+{       Copyright (c) 2022-2025 (Ethea S.r.l.)                                 }
 {       Author: Carlo Barazzetta                                               }
 {                                                                              }
 {       https://github.com/EtheaDev/MarkdownProcessor                          }
@@ -42,7 +42,7 @@ Type
   public
     Constructor Create;
     Destructor Destroy; override;
-    function process(source: String): String; override;
+    function Process(const ASource: string): string; override;
   end;
 
 implementation
@@ -62,9 +62,9 @@ begin
   inherited;
 end;
 
-function TMarkdownTxtMark.process(source: String): String;
+function TMarkdownTxtMark.Process(const ASource: string): string;
 begin
-  result:=inherited process(source);
+  result := inherited Process(ASource);
 end;
 
 

@@ -1,9 +1,11 @@
-Markdown support test
+﻿Markdown support test
 =====================
 
 ![Markdown logo](markdownlogo.png)
 
 This page is a small demonstration of Markdown support.
+
+The file is encoded in UTF-8 format with BOM (this is a UTF-8 symbol: €)
 
 <https://www.markdownguide.org>
 
@@ -68,7 +70,7 @@ end;
 It is possible to use the [Google Chart API] using `TeX` language,
 but the translated formula can only to be seen using a browser,
 for insert a formula using `TeX` enclose the code between `$`
-without `spaces`: 
+without `spaces`:
 
 Quadratic formula          |Zeta formula
 ---------------------------|-----------------------------
