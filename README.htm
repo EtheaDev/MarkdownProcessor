@@ -29,11 +29,21 @@ td{
   border:1px solid;
 }
 </style>
-<h1>Markdown Processor <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg" alt="License"/></a></h1>
+<h1>Markdown Processor and MarkDownToHTML.exe utility<a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg" alt="License"/></a></h1>
 <p>A Markdown Processor Library for Delphi, to process/convert markdown files to HTML.</p>
-<p><strong>Latest Version 1.2.0 - 08 Apr 2025</strong></p>
-<p><mark></mark><mark></mark><mark></mark></p>
-<h2>Basic Information</h2>
+<p>A Useful utility: <strong>MarkDownToHTML.exe</strong> to transform any markdown file to HTML</p>
+<p><strong>Latest Version 1.3.0 - 21 Aug 2025</strong></p>
+<p><img src="/images/SupportingDelphi.jpg" alt="Support Delphi"/></p>
+<p>This library is compatible from Delphi XE3 version to latest.</p>
+<p><a href="https://www.embarcadero.com/">www.embarcadero.com</a> - <a href="https://learndelphi.org/">learndelphi.org</a></p>
+<hr />
+<h2>Using the MarkDownToHTML.exe utility</h2>
+<p>With MarkDownToHTML.exe you can transform a markdown file to HTML using different markdown dialects or StyleSheet.</p>
+<p><a href="https://github.com/EtheaDev/MarkdownProcessor/releases/latest/download/MarkDownToHTML.exe">Download the utility</a>.</p>
+<p>run <strong>MarkDownToHTML.exe help processfile</strong> for a complete help.</p>
+<p>Look into Cmd\MarkdownToHTML\Test\MarkDownToHTML_Test.cmd for examples</p>
+<hr />
+<h2>Basic Informations for Delphi users</h2>
 <p>This is a Pascal (Delphi) library that processes markdown to HTML.
 At present the following dialects of markdown are supported:</p>
 <ul>
@@ -44,7 +54,7 @@ At present the following dialects of markdown are supported:</p>
 <li>Enhanced TxtMark dialect
 (translated from <a href="https://github.com/rjeschke/txtmark">https://github.com/rjeschke/txtmark</a>)</li>
 </ul>
-<h2>Using the Library with Delphi</h2>
+<h3>Using the Library with Delphi</h3>
 <p>Declare a variable of the class TMarkdownProcessor:</p>
 <pre><code class="Pascal">     var
        md : TMarkdownProcessor;
@@ -55,7 +65,7 @@ At present the following dialects of markdown are supported:</p>
 <p>Decide whether you want to allow active content</p>
 <pre><code class="Pascal">       md.AllowUnSafe := true;
 </code></pre>
-<p>Note: you should only set this to true if you <em>need</em> to - active content can be a significant safety/security issue.<br /></p>
+<p>Note: you should only set this to true if you <em>need</em> to - active content can be a significant safety/security issue.</p>
 <p>Generate HTML fragments from Markdown content:</p>
 <pre><code class="Pascal">       html := md.process(markdown);
 </code></pre>
@@ -64,8 +74,8 @@ At present the following dialects of markdown are supported:</p>
 <pre><code class="Pascal">       md.free
 </code></pre>
 <p>Large rework was made for adding support for tables, math formulas, etc.</p>
-<h2>Examples</h2>
-<p>this library is used in two projects:</p>
+<h2>Delphi projects Examples</h2>
+<p>This library is used in two projects:</p>
 <ul>
 <li><a href="https://github.com/EtheaDev/MarkdownShellExtensions">MarkdownShellExtensions</a></li>
 </ul>
@@ -77,6 +87,11 @@ At present the following dialects of markdown are supported:</p>
 <p>An integrated help system based on files in Markdown format (and also html), for Delphi applications:</p>
 <p><img src="./images/ContentPage.png" alt="Markdown HelpViewer"/></p>
 <h2>Release Notes</h2>
+<p>21 Aug 2025: ver. 1.3.0</p>
+<ul>
+<li>Added support for Delphi 13</li>
+<li>Added command line utility MarkDownToHTML.exe</li>
+</ul>
 <p>08 Apr 2025: ver. 1.2.0</p>
 <ul>
 <li>Fixed const parameters</li>
@@ -99,7 +114,15 @@ At present the following dialects of markdown are supported:</p>
 <p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
 <p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &ldquo;AS IS&rdquo; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
 <h2>Contributors</h2>
-<p>MarkdownProcessor implementation is a fork of FPC-markdown by <strong>Miguel A. Risco-Castillo</strong>
+<p><strong>MarkdownProcessor</strong> implementation is a fork of FPC-markdown by <strong>Miguel A. Risco-Castillo</strong>
 <a href="https://github.com/mriscoc/fpc-markdown">FPC-markdown</a></p>
 <p>FPC-markdown implementation is a fork of <strong>Grahame Grieve</strong> pascal port
 <a href="https://github.com/grahamegrieve/delphi-markdown">Delphi-markdown</a></p>
+<hr />
+<p><strong>MarkDownToHTML.exe</strong> is a CLI based on the project:</p>
+<p><strong>Italian Delphi Day 2020: <em>Una CLI che i tuoi utenti ameranno</em></strong></p>
+<p>by <em>Marco Breveglieri</em></p>
+<p><a href="https://www.breveglieri.it/eventi/2020-06-11-delphiday-creare-client-cli/">Go to Slides and Demos page&hellip;</a></p>
+<p>It also uses <strong>CommandLineParser</strong></p>
+<p><a href="https://github.com/VSoftTechnologies/VSoft.CommandLineParser">VSoft.CommandLineParser</a></p>
+<p>by <em>Vincent Parret</em>, licensed under the Apache License, Version 2.0 (the &ldquo;License&rdquo;);</p>

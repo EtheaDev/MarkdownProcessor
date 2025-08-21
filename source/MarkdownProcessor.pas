@@ -64,7 +64,7 @@ Type
 
   { TMarkdownProcessor }
 
-  TMarkdownProcessor = {abstract} class
+  TMarkdownProcessor = class
   private
     FConfig: TConfiguration;
   protected

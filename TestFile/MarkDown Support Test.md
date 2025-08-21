@@ -64,16 +64,3 @@ end;
 | :----------- | :-----------: | -----------: |
 | Left         | Center        | Right        |
 | Second row   | **strong**    | *italic*     |
-
-## Formulas
-
-It is possible to use the [Google Chart API] using `TeX` language,
-but the translated formula can only to be seen using a browser,
-for insert a formula using `TeX` enclose the code between `$`
-without `spaces`:
-
-Quadratic formula          |Zeta formula
----------------------------|-----------------------------
-$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ | $\zeta(s)=\sum_{n=1}^\infty\frac{1}{n^s}$
-
-[Google Chart API]:https://developers.google.com/chart/infographics/docs/formulas
