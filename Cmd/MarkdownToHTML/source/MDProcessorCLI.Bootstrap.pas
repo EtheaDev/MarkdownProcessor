@@ -77,6 +77,16 @@ begin
     end);
   LOption.Required := False;
 
+  // Global Option: "unsafe" (boolean flag: -unsafe or -unsafe:true/false)
+  LOption := TOptionsRegistry.RegisterOption<Boolean>('unsafe', 'u',
+    Format('%s (%s)', [StrCmdUnsafeMode, StrOptional]),
+    procedure (const AValue: Boolean)
+    begin
+      TOptionsForProcessFile.UnsafeMode := AValue;
+    end);
+  LOption.Required := False;
+  LOption.HasValue := False;
+
   //
   // OPERATION: Help
   //
@@ -102,13 +112,14 @@ begin
   //
 
   // Command: "processfile"
-  LCommand := TOptionsRegistry.RegisterCommand(TOptionsForProcessFile.PROCESSFILE_COMMAND, 't',
+  LCommand := TOptionsRegistry.RegisterCommand(TOptionsForProcessFile.PROCESSFILE_COMMAND, 'pfile',
     StrCmdTransformDescription, StrCmdTransformInfo,
     TOptionsForProcessFile.PROCESSFILE_COMMAND+' -in:<InputFileName> <options>');
 
   LCommand.Examples.Add(TOptionsForProcessFile.PROCESSFILE_COMMAND+' -in:InputFile.md -dialect:mdDaringFireball');
   LCommand.Examples.Add(TOptionsForProcessFile.PROCESSFILE_COMMAND+' -in:InputFile.md -out:c:\temp\OutputFile.html');
   LCommand.Examples.Add(TOptionsForProcessFile.PROCESSFILE_COMMAND+' -in:InputFile.md -out:c:\temp\OutputFile.html -style: StyleSheet.css');
+  LCommand.Examples.Add(TOptionsForProcessFile.PROCESSFILE_COMMAND+' -in:InputFile.md -unsafe');
 
   // processfile Option: "in"
   LOption := LCommand.RegisterOption<TFileName>('in', 'i',
@@ -133,6 +144,39 @@ begin
     procedure ()
     begin
       TOptionsForProcessFile.Execute;
+    end);
+
+  // Command: "processfolder"
+  LCommand := TOptionsRegistry.RegisterCommand(TOptionsForProcessFolder.PROCESSFOLDER_COMMAND, 'pfolder',
+    'Process Folder', 'Process Folder description',
+    TOptionsForProcessFolder.PROCESSFOLDER_COMMAND+' -in:<InputFolderName> <options>');
+
+  LCommand.Examples.Add(TOptionsForProcessFolder.PROCESSFOLDER_COMMAND+' -in:C:\temp\input\ -dialect:mdDaringFireball');
+  LCommand.Examples.Add(TOptionsForProcessFolder.PROCESSFOLDER_COMMAND+' -in:C:\temp\input\ -out:c:\temp\output\');
+
+  // processfile Option: "in"
+  LOption := LCommand.RegisterOption<TFolderName>('in', 'i',
+    Format('%s (%s)', [StrOptInputfolder, StrRequired]),
+    procedure(const AValue: TFolderName)
+    begin
+      TOptionsForInputFolder.InputFolderName := AValue;
+    end);
+  LOption.Required := True;
+
+  // processfile Option: "out"
+  LOption := LCommand.RegisterOption<TFolderName>('out', 'o',
+    Format('%s (%s)', [StrOptOutputfolder, StrOptional]),
+    procedure(const AValue: TFolderName)
+    begin
+      TOptionsForOutputFolder.OutputFolderName := AValue;
+    end);
+  LOption.Required := False;
+
+  // Handler
+  TCommandBroker.RegisterCommand(TOptionsForProcessFolder.PROCESSFOLDER_COMMAND,
+    procedure ()
+    begin
+      TOptionsForProcessFolder.Execute;
     end);
 
 end;

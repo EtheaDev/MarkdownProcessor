@@ -1,4 +1,7 @@
 <style type="text/css">
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
 code{
   font-family: "Consolas", monospace;
 }
@@ -32,7 +35,7 @@ td{
 <h1>Markdown Processor and MarkDownToHTML.exe utility<a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg" alt="License"/></a></h1>
 <p>A Markdown Processor Library for Delphi, to process/convert markdown files to HTML.</p>
 <p>A Useful utility: <strong>MarkDownToHTML.exe</strong> to transform any markdown file to HTML</p>
-<p><strong>Latest Version 1.3.0 - 21 Aug 2025</strong></p>
+<p><strong>Latest Version 1.4.1 - 17 Jun 2026</strong></p>
 <p><img src="/images/SupportingDelphi.jpg" alt="Support Delphi"/></p>
 <p>This library is compatible from Delphi XE3 version to latest.</p>
 <p><a href="https://www.embarcadero.com/">www.embarcadero.com</a> - <a href="https://learndelphi.org/">learndelphi.org</a></p>
@@ -56,23 +59,33 @@ At present the following dialects of markdown are supported:</p>
 </ul>
 <h3>Using the Library with Delphi</h3>
 <p>Declare a variable of the class TMarkdownProcessor:</p>
-<pre><code class="Pascal">     var
-       md : TMarkdownProcessor;
+<div style="font-family: Arial, 'Courier New', monospace; font-size: 16pt;  background-color: #FFFFFF; color: #000000;">
+<pre><code><span>     </span><span style="color: #0000FF; font-weight: bold; ">var</span>
+<span>       md </span><span style="color: #555555; ">:</span><span> TMarkdownProcessor</span><span style="color: #555555; ">;</span>
 </code></pre>
+</div>
 <p>Create a TMarkdownProcessor (MarkdownProcessor.pas) of the dialect you want:</p>
-<pre><code class="Pascal">       md := TMarkdownProcessor.createDialect(mdDaringFireball)
+<div style="font-family: Arial, 'Courier New', monospace; font-size: 16pt;  background-color: #FFFFFF; color: #000000;">
+<pre><code><span>       md </span><span style="color: #555555; ">:=</span><span> TMarkdownProcessor</span><span style="color: #555555; ">.</span><span>createDialect</span><span style="color: #555555; ">(</span><span>mdDaringFireball</span><span style="color: #555555; ">)</span>
 </code></pre>
+</div>
 <p>Decide whether you want to allow active content</p>
-<pre><code class="Pascal">       md.AllowUnSafe := true;
+<div style="font-family: Arial, 'Courier New', monospace; font-size: 16pt;  background-color: #FFFFFF; color: #000000;">
+<pre><code><span>       md</span><span style="color: #555555; ">.</span><span>AllowUnSafe </span><span style="color: #555555; ">:=</span><span> true</span><span style="color: #555555; ">;</span>
 </code></pre>
+</div>
 <p>Note: you should only set this to true if you <em>need</em> to - active content can be a significant safety/security issue.</p>
 <p>Generate HTML fragments from Markdown content:</p>
-<pre><code class="Pascal">       html := md.process(markdown);
+<div style="font-family: Arial, 'Courier New', monospace; font-size: 16pt;  background-color: #FFFFFF; color: #000000;">
+<pre><code><span>       html </span><span style="color: #555555; ">:=</span><span> md</span><span style="color: #555555; ">.</span><span>process</span><span style="color: #555555; ">(</span><span>markdown</span><span style="color: #555555; ">);</span>
 </code></pre>
+</div>
 <p>Note that the HTML returned is an HTML fragment, not a full HTML page.</p>
 <p>Do not forget to dispose of the object after the use:</p>
-<pre><code class="Pascal">       md.free
+<div style="font-family: Arial, 'Courier New', monospace; font-size: 16pt;  background-color: #FFFFFF; color: #000000;">
+<pre><code><span>       md</span><span style="color: #555555; ">.</span><span>free</span>
 </code></pre>
+</div>
 <p>Large rework was made for adding support for tables, math formulas, etc.</p>
 <h2>Delphi projects Examples</h2>
 <p>This library is used in two projects:</p>
@@ -87,6 +100,22 @@ At present the following dialects of markdown are supported:</p>
 <p>An integrated help system based on files in Markdown format (and also html), for Delphi applications:</p>
 <p><img src="./images/ContentPage.png" alt="Markdown HelpViewer"/></p>
 <h2>Release Notes</h2>
+<p>17 Jun 2026: ver. 1.4.1</p>
+<ul>
+<li>fixed tables: inline constructs no longer span cells</li>
+<li>updated Markdown Support Test.md file</li>
+<li>fixed Allow Unsafe mode</li>
+</ul>
+<p>11 Jun 2026: ver. 1.4.0</p>
+<ul>
+<li>Added &ldquo;-unsafe&rdquo; command line option to MarkDownToHTML.exe (safe mode is the default)</li>
+<li>Fixed safe mode: unsafe HTML elements (script, iframe, object, applet, frame&hellip;) are now correctly escaped</li>
+<li>Math formulas: replaced the deprecated Google Chart API with the CodeCogs LaTeX renderer</li>
+<li>Math formulas: added support for centered formula blocks using the <div style="text-align:center;"><img src="https://latex.codecogs.com/png.image?..." alt="... "/></div> syntax</li>
+<li>Improved tables support</li>
+<li>TUtils.codeEncode now encodes spaces as %20</li>
+<li>Aligned with upstream FPC-markdown by Miguel A. Risco-Castillo</li>
+</ul>
 <p>21 Aug 2025: ver. 1.3.0</p>
 <ul>
 <li>Added support for Delphi 13</li>

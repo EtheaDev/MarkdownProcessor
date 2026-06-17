@@ -4,7 +4,7 @@ A Markdown Processor Library for Delphi, to process/convert markdown files to HT
 
 A Useful utility: **MarkDownToHTML.exe** to transform any markdown file to HTML
 
-**Latest Version 1.3.0 - 21 Aug 2025**
+**Latest Version 1.4.1 - 17 Jun 2026**
 
 ![Support Delphi](/images/SupportingDelphi.jpg)
 
@@ -96,6 +96,20 @@ An integrated help system based on files in Markdown format (and also html), for
 ![Markdown HelpViewer](./images/ContentPage.png)
 
 ## Release Notes ##
+
+17 Jun 2026: ver. 1.4.1
+- fixed tables: inline constructs no longer span cells
+- updated Markdown Support Test.md file
+- fixed Allow Unsafe mode
+
+11 Jun 2026: ver. 1.4.0
+- Added "-unsafe" command line option to MarkDownToHTML.exe (safe mode is the default)
+- Fixed safe mode: unsafe HTML elements (script, iframe, object, applet, frame...) are now correctly escaped
+- Math formulas: replaced the deprecated Google Chart API with the CodeCogs LaTeX renderer
+- Math formulas: added support for centered formula blocks using the $$...$$ syntax
+- Improved tables support
+- TUtils.codeEncode now encodes spaces as %20
+- Aligned with upstream FPC-markdown by Miguel A. Risco-Castillo
 
 21 Aug 2025: ver. 1.3.0
 - Added support for Delphi 13

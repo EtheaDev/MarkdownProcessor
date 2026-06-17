@@ -39,6 +39,7 @@ const
 
 type
   TDialectOption = (CommonMark, DaringFireball, TxtMark);
+  TFolderName = string;
 
 const
   ADialects : Array[TDialectOption] of string =
@@ -63,9 +64,33 @@ type
     StyleSheetFileName: TFileName;
   end;
 
+  TOptionsForInputFolder = class
+  public
+  class var
+    InputFolderName: TFolderName;
+  end;
+
+  TOptionsForOutputFolder = class
+  public
+  class var
+    OutputFolderName: TFolderName;
+    StyleSheetFileName: TFileName;
+  end;
+
   TOptionsForProcessFile = class
   public
   const PROCESSFILE_COMMAND = 'processfile';
+  class var
+    ProcessorDialect: TDialectOption;
+    Encoding: TEncoding;
+    UnsafeMode: Boolean;
+  class constructor Create;
+  class procedure Execute;
+  end;
+
+  TOptionsForProcessFolder = class
+  public
+  const PROCESSFOLDER_COMMAND = 'processfolder';
   class var
     ProcessorDialect: TDialectOption;
     Encoding: TEncoding;
@@ -89,6 +114,8 @@ begin
   //Default Dialect to Use
   ProcessorDialect := CommonMark;
   Encoding := TEncoding.UTF8;
+  //Default to safe mode (active content like <script>, <iframe>... is neutralized)
+  UnsafeMode := False;
 end;
 
 class procedure TOptionsForProcessFile.Execute;
@@ -107,6 +134,14 @@ begin
     LProcessor := TMarkdownProcessor.CreateDialect(mdCommonMark);
   end;
   TConsole.LogInfoSuccess(StrDialectUsed, ADialects[ProcessorDialect]);
+
+  //Apply safe/unsafe mode: when UnsafeMode is True active content (scripts,
+  //iframes, etc.) coming from the markdown is emitted as-is instead of being escaped.
+  LProcessor.AllowUnsafe := UnsafeMode;
+  if UnsafeMode then
+    TConsole.LogInfoSuccess(StrUnsafeMode, StrUnsafeModeOn)
+  else
+    TConsole.LogInfoSuccess(StrUnsafeMode, StrUnsafeModeOff);
 
   try
     //Check Input File
@@ -164,6 +199,24 @@ begin
     LProcessor.Free;
   end;
   TConsole.LogInfoSuccess(StrDoneCommand, PROCESSFILE_COMMAND, True);
+end;
+
+{ TOptionsForProcessFolder }
+
+class constructor TOptionsForProcessFolder.Create;
+begin
+  //Default Dialect to Use
+  ProcessorDialect := CommonMark;
+  Encoding := TEncoding.UTF8;
+end;
+
+class procedure TOptionsForProcessFolder.Execute;
+begin
+  TConsole.LogInfoSuccess(StrStartCommand, PROCESSFOLDER_COMMAND, True);
+
+  //TODO
+
+  TConsole.LogInfoSuccess(StrDoneCommand, PROCESSFOLDER_COMMAND, True);
 end;
 
 end.

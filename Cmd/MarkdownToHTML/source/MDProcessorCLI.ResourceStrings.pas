@@ -45,9 +45,13 @@ resourcestring
   StrRequired = '(Required)';
   StrDefault = '(default)';
   StrNoStyle = '(Do not use any StyleSheet)';
+  StrUnsafeMode = 'Unsafe mode';
+  StrUnsafeModeOn = 'ON (active content is NOT escaped - use only with trusted sources)';
+  StrUnsafeModeOff = 'OFF (active content like <script>, <iframe>... is escaped)';
 
   // General Options
   StrCmdTransformDialect = 'The dialect used for transformation: CommonMark (default), DaringFireball, TxtMark';
+  StrCmdUnsafeMode = 'Allow unsafe/active HTML content (<script>, <iframe>, <object>...) in the output instead of escaping it. Off by default; enable only for trusted input.';
 
   // Command: transform
   StrCmdTransformDescription = 'Convert a Markdown file to HTML';
@@ -60,6 +64,9 @@ resourcestring
   StrOptStylefile = 'Stylesheet file applied to HTML output';
   StrStartTransformation = 'Start transformation...';
   StrSavingOutput = 'Saving output file...';
+  StrOptInputfolder = 'Input folder contains Markdown files to be processed';
+  StrOptOutputfolder = 'Output folder contains HTML files to generate';
+
 
   StrCmdHelpDescription = 'Show Help of a command';
   StrCmdHelpInfo = 'View informations about how the commands work '+

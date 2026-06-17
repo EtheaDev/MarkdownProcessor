@@ -58,9 +58,30 @@ end;
 ---
 ### Horizontal rule
 
+## Math formulas
+
+Inline formula written between single dollar signs: $E = mc^2$ rendered inside the text.
+
+Use double dollar signs for a centered formula block:
+
+$$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
 ## Tables
 
 | First Header | Second Header | Third Header |
 | :----------- | :-----------: | -----------: |
 | Left         | Center        | Right        |
 | Second row   | **strong**    | *italic*     |
+
+### Evolved table (mixed inline formatting)
+
+Each cell is an independent inline scope: inline markers (`~`, `**`, `` ` ``,
+`~~`, ...) must NOT span across cells/rows.
+
+| Header **A** | Header *B* | Col `C` |
+| :----------- | :--------: | ------: |
+| **strong**          | *italic*              | `code()`           |
+| ~~strike~~          | [link](http://x.it)   | a~b~c              |
+| H~2~O               | x^2^                  | plain text         |
+| pipe \| escaped     | normal                | end                |
+| **Totale LDV/anno** | **~7.000 – 8.000**    | ~30-35 LDV/giorno  |

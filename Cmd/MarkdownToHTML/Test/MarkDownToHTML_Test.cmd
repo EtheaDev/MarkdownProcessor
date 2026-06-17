@@ -48,6 +48,11 @@ call %CommandFile% processfile -in:"..\..\..\TestFile\MarkDown Support Test.md" 
 call %CommandFile% processfile -in:"..\..\..\TestFile\MarkDown Support Test.md" -out:"..\..\..\TestFile\NoStyleSheet.html" -Style:none
 
 @echo *************************************************************************
+@echo Test processfile command with Unsafe mode (active content NOT escaped)
+@echo calling: %CommandFile% processfile -in:"..\..\..\TestFile\MarkDown Support Test.md" -out:"..\..\..\TestFile\Unsafe.html" -unsafe
+call %CommandFile% processfile -in:"..\..\..\TestFile\MarkDown Support Test.md" -out:"..\..\..\TestFile\Unsafe.html" -unsafe
+
+@echo *************************************************************************
 @echo End of Test.
 :exit
 pause
