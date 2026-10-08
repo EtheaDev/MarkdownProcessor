@@ -38,12 +38,12 @@ const
   EXITCODE_PARSE_ERROR = 1;
 
 type
-  TDialectOption = (CommonMark, DaringFireball, TxtMark);
+  TDialectOption = (CommonMark, DaringFireball, TxtMark, GFM, GitHub);
   TFolderName = string;
 
 const
   ADialects : Array[TDialectOption] of string =
-    ('CommonMark', 'DaringFireball', 'TxtMark');
+    ('CommonMark', 'DaringFireball', 'TxtMark', 'GFM', 'GitHub');
 
 type
   TOptionsForHelp = class
@@ -112,7 +112,7 @@ uses
 class constructor TOptionsForProcessFile.Create;
 begin
   //Default Dialect to Use
-  ProcessorDialect := CommonMark;
+  ProcessorDialect := GitHub;
   Encoding := TEncoding.UTF8;
   //Default to safe mode (active content like <script>, <iframe>... is neutralized)
   UnsafeMode := False;
@@ -130,13 +130,19 @@ begin
   case ProcessorDialect of
     DaringFireball: LProcessor := TMarkdownProcessor.CreateDialect(mdDaringFireball);
     TxtMark: LProcessor := TMarkdownProcessor.CreateDialect(mdTxtMark);
-  else //CommonMark (default)
-    LProcessor := TMarkdownProcessor.CreateDialect(mdCommonMark);
+    GFM: LProcessor := TMarkdownProcessor.CreateDialect(mdGFM);
+    CommonMark: LProcessor := TMarkdownProcessor.CreateDialect(mdCommonMark);
+  else //GitHub (default)
+    LProcessor := TMarkdownProcessor.CreateDialect(mdGitHub);
   end;
+  //The output is a standalone page without scripts: math as images (as the
+  //previous versions did), mermaid diagrams as their source
+  LProcessor.Config.MathRendering := mmrCodeCogsImage;
   TConsole.LogInfoSuccess(StrDialectUsed, ADialects[ProcessorDialect]);
 
   //Apply safe/unsafe mode: when UnsafeMode is True active content (scripts,
-  //iframes, etc.) coming from the markdown is emitted as-is instead of being escaped.
+  //iframes, etc.) coming from the markdown is emitted as-is instead of being
+  //omitted (CommonMark, GFM) or escaped (DaringFireball, TxtMark).
   LProcessor.AllowUnsafe := UnsafeMode;
   if UnsafeMode then
     TConsole.LogInfoSuccess(StrUnsafeMode, StrUnsafeModeOn)
@@ -206,7 +212,7 @@ end;
 class constructor TOptionsForProcessFolder.Create;
 begin
   //Default Dialect to Use
-  ProcessorDialect := CommonMark;
+  ProcessorDialect := GitHub;
   Encoding := TEncoding.UTF8;
 end;
 

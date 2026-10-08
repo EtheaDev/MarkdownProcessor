@@ -1,0 +1,122 @@
+[
+ {
+  "markdown": "> [!NOTE]\n> Useful information.\n",
+  "html": "<div class=\"markdown-alert markdown-alert-note\">\n<p class=\"markdown-alert-title\">Note</p>\n<p>Useful information.</p>\n</div>\n",
+  "example": 1,
+  "section": "Alert types"
+ },
+ {
+  "markdown": "> [!TIP]\n> Helpful advice.\n",
+  "html": "<div class=\"markdown-alert markdown-alert-tip\">\n<p class=\"markdown-alert-title\">Tip</p>\n<p>Helpful advice.</p>\n</div>\n",
+  "example": 2,
+  "section": "Alert types"
+ },
+ {
+  "markdown": "> [!IMPORTANT]\n> Key information.\n",
+  "html": "<div class=\"markdown-alert markdown-alert-important\">\n<p class=\"markdown-alert-title\">Important</p>\n<p>Key information.</p>\n</div>\n",
+  "example": 3,
+  "section": "Alert types"
+ },
+ {
+  "markdown": "> [!WARNING]\n> Urgent info.\n",
+  "html": "<div class=\"markdown-alert markdown-alert-warning\">\n<p class=\"markdown-alert-title\">Warning</p>\n<p>Urgent info.</p>\n</div>\n",
+  "example": 4,
+  "section": "Alert types"
+ },
+ {
+  "markdown": "> [!CAUTION]\n> Negative outcomes.\n",
+  "html": "<div class=\"markdown-alert markdown-alert-caution\">\n<p class=\"markdown-alert-title\">Caution</p>\n<p>Negative outcomes.</p>\n</div>\n",
+  "example": 5,
+  "section": "Alert types"
+ },
+ {
+  "markdown": "> [!note]\n> Lower case marker.\n",
+  "html": "<div class=\"markdown-alert markdown-alert-note\">\n<p class=\"markdown-alert-title\">Note</p>\n<p>Lower case marker.</p>\n</div>\n",
+  "example": 6,
+  "section": "Alert types"
+ },
+ {
+  "markdown": "> [!CAUTION]\n",
+  "html": "<div class=\"markdown-alert markdown-alert-caution\">\n<p class=\"markdown-alert-title\">Caution</p>\n</div>\n",
+  "example": 7,
+  "section": "Alert content"
+ },
+ {
+  "markdown": "> [!IMPORTANT]\n>\n> Body text.\n",
+  "html": "<div class=\"markdown-alert markdown-alert-important\">\n<p class=\"markdown-alert-title\">Important</p>\n<p>Body text.</p>\n</div>\n",
+  "example": 8,
+  "section": "Alert content"
+ },
+ {
+  "markdown": "> [!TIP]\n> First.\n>\n> - a\n> - b\n",
+  "html": "<div class=\"markdown-alert markdown-alert-tip\">\n<p class=\"markdown-alert-title\">Tip</p>\n<p>First.</p>\n<ul>\n<li>a</li>\n<li>b</li>\n</ul>\n</div>\n",
+  "example": 9,
+  "section": "Alert content"
+ },
+ {
+  "markdown": "> [!WARNING]\n> **Careful** with `x`.\n",
+  "html": "<div class=\"markdown-alert markdown-alert-warning\">\n<p class=\"markdown-alert-title\">Warning</p>\n<p><strong>Careful</strong> with <code>x</code>.</p>\n</div>\n",
+  "example": 10,
+  "section": "Alert content"
+ },
+ {
+  "markdown": "> [!NOTE]  \n> Hard break after the marker.\n",
+  "html": "<div class=\"markdown-alert markdown-alert-note\">\n<p class=\"markdown-alert-title\">Note</p>\n<p>Hard break after the marker.</p>\n</div>\n",
+  "example": 11,
+  "section": "Alert content"
+ },
+ {
+  "markdown": "> [!NOTE]\nlazy continuation\n",
+  "html": "<div class=\"markdown-alert markdown-alert-note\">\n<p class=\"markdown-alert-title\">Note</p>\n<p>lazy continuation</p>\n</div>\n",
+  "example": 12,
+  "section": "Alert content"
+ },
+ {
+  "markdown": "> [!NOTE]\n> > [!TIP]\n> > Inner\n",
+  "html": "<div class=\"markdown-alert markdown-alert-note\">\n<p class=\"markdown-alert-title\">Note</p>\n<blockquote>\n<p>[!TIP]\nInner</p>\n</blockquote>\n</div>\n",
+  "example": 13,
+  "section": "Alert content"
+ },
+ {
+  "markdown": "Text before.\n\n> [!TIP]\n> Tip.\n\nText after.\n",
+  "html": "<p>Text before.</p>\n<div class=\"markdown-alert markdown-alert-tip\">\n<p class=\"markdown-alert-title\">Tip</p>\n<p>Tip.</p>\n</div>\n<p>Text after.</p>\n",
+  "example": 14,
+  "section": "Alert content"
+ },
+ {
+  "markdown": "> [!FOO]\n> Body\n",
+  "html": "<blockquote>\n<p>[!FOO]\nBody</p>\n</blockquote>\n",
+  "example": 15,
+  "section": "Not an alert"
+ },
+ {
+  "markdown": "> [!NOTE] Body\n",
+  "html": "<blockquote>\n<p>[!NOTE] Body</p>\n</blockquote>\n",
+  "example": 16,
+  "section": "Not an alert"
+ },
+ {
+  "markdown": "> *[!NOTE]*\n> Body\n",
+  "html": "<blockquote>\n<p><em>[!NOTE]</em>\nBody</p>\n</blockquote>\n",
+  "example": 17,
+  "section": "Not an alert"
+ },
+ {
+  "markdown": "- > [!NOTE]\n  > Body\n",
+  "html": "<ul>\n<li>\n<blockquote>\n<p>[!NOTE]\nBody</p>\n</blockquote>\n</li>\n</ul>\n",
+  "example": 18,
+  "section": "Not an alert"
+ },
+ {
+  "markdown": "[!NOTE]\nNot in a quote.\n",
+  "html": "<p>[!NOTE]\nNot in a quote.</p>\n",
+  "example": 19,
+  "section": "Not an alert"
+ },
+ {
+  "markdown": "> # [!NOTE]\n> Body\n",
+  "html": "<blockquote>\n<h1>[!NOTE]</h1>\n<p>Body</p>\n</blockquote>\n",
+  "example": 20,
+  "section": "Not an alert"
+ }
+]

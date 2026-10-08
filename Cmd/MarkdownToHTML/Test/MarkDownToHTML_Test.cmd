@@ -1,5 +1,5 @@
 @echo Off
-Set CommandFile="..\Bin\Win64\MarkDownToHTML.exe"
+Set CommandFile="..\..\Win64\MarkDownToHTML.exe"
 @echo Using: %CommandFile%
 
 @echo *************************************************************************
@@ -38,9 +38,14 @@ call %CommandFile% processfile -in:"..\..\..\TestFile\MarkDown Support Test.md" 
 call %CommandFile% processfile -dialect:DaringFireball -in:"..\..\..\TestFile\MarkDown Support Test.md" -out:"..\..\..\TestFile\DaringFireball.html"
 
 @echo *************************************************************************
+@echo Test processfile command with GFM Dialect (GitHub Flavored Markdown)
+@echo calling: %CommandFile% processfile -dialect:GFM -in:"..\..\..\TestFile\MarkDown Support Test.md" -out:"..\..\..\TestFile\GFM.html"
+call %CommandFile% processfile -dialect:GFM -in:"..\..\..\TestFile\MarkDown Support Test.md" -out:"..\..\..\TestFile\GFM.html"
+
+@echo *************************************************************************
 @echo Test processfile command with Custom StyleSheet
-@echo calling: %CommandFile% processfile -in:"..\..\..\TestFile\MarkDown Support Test.md" -out:"..\..\..\TestFile\UseCustomStyleSheet.html" -Style:"..\..\..\TestFile\MarkDown Style.css"
-call %CommandFile% processfile -in:"..\..\..\TestFile\MarkDown Support Test.md" -out:"..\..\..\TestFile\UseCustomStyleSheet.html" -Style:"..\..\..\TestFile\MarkDown Style.css"
+@echo calling: %CommandFile% processfile -in:"..\..\..\TestFile\MarkDown Support Test.md" -out:"..\..\..\TestFile\UseCustomStyleSheet.html" -Style:"..\..\..\TestFile\MarkDown Support Test.css"
+call %CommandFile% processfile -in:"..\..\..\TestFile\MarkDown Support Test.md" -out:"..\..\..\TestFile\UseCustomStyleSheet.html" -Style:"..\..\..\TestFile\MarkDown Support Test.css"
 
 @echo *************************************************************************
 @echo Test processfile command without StyleSheet

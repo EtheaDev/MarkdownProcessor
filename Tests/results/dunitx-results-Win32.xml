@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<test-results name="D:\ETHEA\MarkdownProcessor\Tests\Win32\Debug\MarkdownProcessor.Tests.exe" total="120" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2026-10-07" time="16:00:11">
+  <culture-info current-culture="en" current-uiculture="en" />
+  <test-suite type="Assembly" name="MarkdownProcessor.Tests.exe" executed="true" result="Success" success="True" time="16:00:11" asserts="0">
+    <results>
+        <test-suite type="Namespace" name="MarkdownProcessor" executed="true" result="Success" success="True" time="1.782" asserts="0" >
+          <results>
+              <test-suite type="Namespace" name="Tests" executed="true" result="Success" success="True" time="1.782" asserts="0" >
+                <results>
+                    <test-suite type="Fixture" name="TASTTests" executed="True" result="Success" success="True" time="0.000" >
+                      <results>
+                        <test-case name="Parse_Document_HasBlockStructureAndLines" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Parse_Inlines_HaveKindsAndProperties" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Parse_GfmNodes_TableTaskAlertMath" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Parse_ChildReference_KeepsTreeAlive" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Render_OfParse_EqualsProcess" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Parse_LegacyDialect_RaisesNotSupported" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      </results>
+                    </test-suite>
+                    <test-suite type="Fixture" name="TAlertsTests" executed="True" result="Success" success="True" time="0.001" >
+                      <results>
+                        <test-case name="Alerts_Section_Matches.Alert types" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                        <test-case name="Alerts_Section_Matches.Alert content" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Alerts_Section_Matches.Not an alert" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Alerts_OffByDefault_KeepsBlockQuote" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      </results>
+                    </test-suite>
+                    <test-suite type="Fixture" name="TCommonMarkSpecTests" executed="True" result="Success" success="True" time="0.008" >
+                      <results>
+                        <test-case name="CommonMark_Corpus_ContainsAllExamples" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Tabs" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Backslash escapes" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Entity and numeric character references" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Precedence" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Thematic breaks" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.ATX headings" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Setext headings" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Indented code blocks" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Fenced code blocks" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.HTML blocks" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Link reference definitions" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Paragraphs" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Blank lines" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Block quotes" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.List items" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Lists" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Inlines" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Code spans" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Emphasis and strong emphasis" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Links" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Images" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Autolinks" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Raw HTML" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Hard line breaks" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Soft line breaks" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                        <test-case name="CommonMark_Section_MatchesSpec.Textual content" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      </results>
+                    </test-suite>
+                    <test-suite type="Fixture" name="TMarkdownToHTMLTests" executed="True" result="Success" success="True" time="0.017" >
+                      <results>
+                        <test-case name="Defaults_AreTheLibraryDefaults" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="MarkdownContent_IsConverted" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Options_ConvertAgain" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="ProcessorDialect_ResetsExtensions" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="HtmlContent_AssignedDirectly_IsKept" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Files_LoadUtf8AndAnsi_ExportUtf8" executed="True" result="Success" success="True" time="0.016" asserts="0" />
+                        <test-case name="Streaming_StoresOnlyNonDefaults" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                        <test-case name="Emitters_AreNotFreed" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="TransformContent_WithDialect" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="BeginUpdate_ConvertsOnceAtEndUpdate" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      </results>
+                    </test-suite>
+                    <test-suite type="Fixture" name="TExtensionsTests" executed="True" result="Success" success="True" time="0.002" >
+                      <results>
+                        <test-case name="Extensions_Section_Matches.Subscript" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Superscript" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Insert" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Mark" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Subscript and strikethrough" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Smart typography" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Heading attributes" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Auto heading ids" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Heading attributes and auto ids" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Wiki links" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Disabled" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Mermaid" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Mermaid off" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.Math images" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_Section_Matches.GitHub dialect" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Extensions_SupportTestFile_RendersAllFeatures" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Dialect_Default_IsGitHub" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      </results>
+                    </test-suite>
+                    <test-suite type="Fixture" name="TGfmSpecTests" executed="True" result="Success" success="True" time="0.001" >
+                      <results>
+                        <test-case name="Gfm_Corpus_ContainsAllExamples" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Gfm_Section_MatchesSpec.Tables (extension)" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Gfm_Section_MatchesSpec.Task list items (extension)" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Gfm_Section_MatchesSpec.Strikethrough (extension)" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Gfm_Section_MatchesSpec.Autolinks (extension)" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Gfm_Section_MatchesSpec.Disallowed Raw HTML (extension)" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      </results>
+                    </test-suite>
+                    <test-suite type="Fixture" name="THooksTests" executed="True" result="Success" success="True" time="0.000" >
+                      <results>
+                        <test-case name="CodeBlockEmitter_FencedBlock_ReceivesLinesAndInfo" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CodeBlockEmitter_IndentedBlock_ReceivesLines" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CodeBlockEmitter_Mermaid_ReceivesTheBlock" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="CodeBlockEmitter_Unassigned_StandardOutput" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="SpecialLinkEmitter_WikiLink_ReceivesRenderedContent" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="SpecialLinkEmitter_ExtensionOff_NotCalled" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      </results>
+                    </test-suite>
+                    <test-suite type="Fixture" name="TLegacySnapshotTests" executed="True" result="Success" success="True" time="0.028" >
+                      <results>
+                        <test-case name="Legacy_TestFile_Unchanged.DaringFireball" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                        <test-case name="Legacy_TestFile_Unchanged.TxtMark" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                        <test-case name="Legacy_CommonMarkCorpus_Unchanged.DaringFireball" executed="True" result="Success" success="True" time="0.012" asserts="0" />
+                        <test-case name="Legacy_CommonMarkCorpus_Unchanged.TxtMark" executed="True" result="Success" success="True" time="0.011" asserts="0" />
+                      </results>
+                    </test-suite>
+                    <test-suite type="Fixture" name="TMathSpecTests" executed="True" result="Success" success="True" time="0.001" >
+                      <results>
+                        <test-case name="Math_Corpus_ContainsAllExamples" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Math_Section_MatchesSpec.Inline math" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Math_Section_MatchesSpec.Display math" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Math_Section_MatchesSpec.Math fence" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                      </results>
+                    </test-suite>
+                    <test-suite type="Fixture" name="TPerformanceTests" executed="True" result="Success" success="True" time="1.722" >
+                      <results>
+                        <test-case name="Performance_Pathological_WithinBudget.nested strong emph" executed="True" result="Success" success="True" time="0.114" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.many emph closers with no openers" executed="True" result="Success" success="True" time="0.017" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.many emph openers with no closers" executed="True" result="Success" success="True" time="0.013" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.many link closers with no openers" executed="True" result="Success" success="True" time="0.013" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.many link openers with no closers" executed="True" result="Success" success="True" time="0.018" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.mismatched openers and closers" executed="True" result="Success" success="True" time="0.038" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.openers and closers multiple of 3" executed="True" result="Success" success="True" time="0.022" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.link openers and emph closers" executed="True" result="Success" success="True" time="0.032" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.pattern [ (]( repeated" executed="True" result="Success" success="True" time="0.060" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.nested brackets" executed="True" result="Success" success="True" time="0.164" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.nested block quotes" executed="True" result="Success" success="True" time="0.016" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.deeply nested lists" executed="True" result="Success" success="True" time="0.034" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.U+0000 in input" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.backticks" executed="True" result="Success" success="True" time="0.198" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.unclosed links A" executed="True" result="Success" success="True" time="0.076" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.unclosed links B" executed="True" result="Success" success="True" time="0.056" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.unclosed html comments" executed="True" result="Success" success="True" time="0.030" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.unclosed processing instructions" executed="True" result="Success" success="True" time="0.016" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.unclosed CDATA" executed="True" result="Success" success="True" time="0.046" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.unclosed declarations" executed="True" result="Success" success="True" time="0.024" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.many references" executed="True" result="Success" success="True" time="0.099" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.reference with long label" executed="True" result="Success" success="True" time="0.012" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.tables with many rows" executed="True" result="Success" success="True" time="0.143" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.tildes" executed="True" result="Success" success="True" time="0.042" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.dollars" executed="True" result="Success" success="True" time="0.020" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.spaced dollars" executed="True" result="Success" success="True" time="0.022" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.double dollars" executed="True" result="Success" success="True" time="0.017" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.backtick math" executed="True" result="Success" success="True" time="0.020" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.wiki link openers" executed="True" result="Success" success="True" time="0.022" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.e-mail at signs" executed="True" result="Success" success="True" time="0.003" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.www autolinks" executed="True" result="Success" success="True" time="0.062" asserts="0" />
+                        <test-case name="Performance_Pathological_WithinBudget.long paragraph" executed="True" result="Success" success="True" time="0.263" asserts="0" />
+                      </results>
+                    </test-suite>
+                    <test-suite type="Fixture" name="TSafetyTests" executed="True" result="Success" success="True" time="0.001" >
+                      <results>
+                        <test-case name="Safety_DefaultIsSafe" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Safety_Section_Matches.Raw HTML" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Safety_Section_Matches.Dangerous URLs" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                        <test-case name="Safety_Section_Matches.Allowed URLs" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      </results>
+                    </test-suite>
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+    </results>
+  </test-suite>
+</test-results>

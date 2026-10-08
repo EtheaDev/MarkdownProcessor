@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 512 512">
+  <!-- white page: the shape of the document (rounded corner, folded corner) -->
+  <path fill="white" d="M60.66 355.28V64.53C60.66 28.85 89.59-.08 125.27-.08H302.95L448.31 145.3V355.28z"/>
+  <!-- document outline -->
+  <path d="M448.31 145.3v209.98h-32.3V145.3H351.4c-26.76 0-48.46-21.7-48.46-48.46V32.23H125.26c-17.84 0-32.3 14.46-32.3 32.3v290.74h-32.3V64.53c0-35.68 28.93-64.61 64.61-64.61h177.68z" style="fill-rule:evenodd;clip-rule:evenodd"/>
+  <!-- red label: from the bottom edge of the document (y 355.28) to the bottom of the icon -->
+  <rect x="14.35" y="355.28" width="483.4" height="156.72" rx="24" fill="#D32F2F"/>
+  <!-- HTML, white, scaled by 0.8 around its center (256.05,447.33) and centered in the label (256.05,433.64) -->
+  <path fill="white" transform="translate(256.05,433.64) scale(0.8) translate(-256.05,-447.33)" d="M133.79 382.74v129.19h-25.55v-55.37H53.87v55.37H28.35V382.74H53.9v52.53h54.34v-52.53h25.55m72.72 21.38v107.8h-25.65v-107.8h-36.6v-21.39h98.98v21.39zm70.29 107.8v-85.93h1.23l30.75 69.75h16.67l30.56-69.78h1.23v85.96h23.1V382.74H354.5l-36.83 83.86h-.84L280 382.74h-26v129.19zm152.16-21.77h54.79v21.77h-80.34V382.74h25.52v107.41z" style="fill-rule:evenodd;clip-rule:evenodd"/>
+  <!-- Markdown logo (16x16 viewBox) scaled by 15.6 around its center (8,8): centered
+       horizontally on the document (x 254.5), vertically at y 259.2 (y 181 - 337) -->
+  <g transform="translate(254.5,259.2) scale(15.6) translate(-8,-8)">
+    <path fill="black" d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.69C0 12.48.52 13 1.15 13h13.69c.64 0 1.15-.52 1.15-1.15v-7.7C16 3.52 15.48 3 14.85 3zM9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"/>
+    <!-- the M and the arrow are holes of the path above: fill them -->
+    <path fill="white" d="M9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zM11.99 11.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"/>
+  </g>
+</svg>

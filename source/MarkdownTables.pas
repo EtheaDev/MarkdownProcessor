@@ -174,7 +174,7 @@ var
   sepCount: integer;
   hasDash: boolean;
 begin
-  result:=0; Cols:=0;
+  Cols:=0;
   if not Assigned(L) or L.isEmpty then exit(0);
   i:=L.leading+1;
   j:=Length(L.value)-L.trailing;

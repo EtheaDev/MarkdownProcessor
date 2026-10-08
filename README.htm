@@ -1,6 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
 <style type="text/css">
-body{
-  font-family: Arial, Helvetica, sans-serif;
+:root{color-scheme:dark;}
+body{font-family:"Arial",sans-serif;font-size:12pt;color:#FFFFFF;background-color:#191D22;}
+a{color:#0000FF;}
+.markdown-alert>:last-child{margin-bottom:0;}
+.markdown-alert-title{margin-top:0;}
+@media print{body{color:#000;background-color:#fff;}}
+</style>
+<link rel="stylesheet" href="https://mdviewer-scripts.local/katex/katex.min.css">
+<script defer src="https://mdviewer-scripts.local/katex/katex.min.js"></script>
+<script defer src="https://mdviewer-scripts.local/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+<script>
+document.addEventListener("click",function(e){var a=e.target.closest("a");if(a){var h=a.getAttribute("href");if(h&&h.charAt(0)==="#"){e.preventDefault();var t=document.getElementById(decodeURIComponent(h.substring(1)));if(t)t.scrollIntoView();}}});
+window.addEventListener("scroll",function(){if(window.chrome&&chrome.webview)chrome.webview.postMessage("scrollY:"+Math.round(window.scrollY)+":"+Math.max(0,Math.round(document.documentElement.scrollHeight-window.innerHeight)));});
+</script>
+</head>
+<body>
+<style type="text/css">
+img{
+  max-width: 100%;
+  height: auto;
 }
 code{
   font-family: "Consolas", monospace;
@@ -24,82 +46,256 @@ table{
   border:1px solid;
   border-collapse:collapse;
 }
-th{  padding:5px;
+th{
+  padding:5px;
   border:1px solid;
 }
 td{
   padding:5px;
   border:1px solid;
 }
+mark{
+  background-color: #fff3a0;
+  color: #000;
+}
+kbd{
+  font-family: "Consolas", monospace;
+  border: 1px solid #bbb;
+  padding: 0 4px;
+}
+div.math{
+  text-align: center;
+}
+pre.mermaid{
+  border: none;
+  padding: 0;
+}
+.markdown-alert{
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  border-left: 4px solid #d0d7de;
+}
+.markdown-alert-title{
+  font-weight: bold;
+}
+.markdown-alert-note{
+  border-left: 4px solid #0969da;
+}
+.markdown-alert-note .markdown-alert-title{
+  color: #0969da;
+}
+.markdown-alert-tip{
+  border-left: 4px solid #1a7f37;
+}
+.markdown-alert-tip .markdown-alert-title{
+  color: #1a7f37;
+}
+.markdown-alert-important{
+  border-left: 4px solid #8250df;
+}
+.markdown-alert-important .markdown-alert-title{
+  color: #8250df;
+}
+.markdown-alert-warning{
+  border-left: 4px solid #9a6700;
+}
+.markdown-alert-warning .markdown-alert-title{
+  color: #9a6700;
+}
+.markdown-alert-caution{
+  border-left: 4px solid #cf222e;
+}
+.markdown-alert-caution .markdown-alert-title{
+  color: #cf222e;
+}
 </style>
-<h1>Markdown Processor and MarkDownToHTML.exe utility<a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg" alt="License"/></a></h1>
+<h1 id="markdown-processor-for-delphi-lib-component-markdowntohtmlexe-cmd">Markdown Processor for Delphi (Lib, Component, MarkDownToHTML.exe cmd).</h1>
 <p>A Markdown Processor Library for Delphi, to process/convert markdown files to HTML.</p>
 <p>A Useful utility: <strong>MarkDownToHTML.exe</strong> to transform any markdown file to HTML</p>
-<p><strong>Latest Version 1.4.1 - 17 Jun 2026</strong></p>
-<p><img src="/images/SupportingDelphi.jpg" alt="Support Delphi"/></p>
-<p>This library is compatible from Delphi XE3 version to latest.</p>
+<!-- raw HTML omitted -->
+<p><a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg" alt="License: Apache" /></a>
+<a href="https://github.com/EtheaDev/MarkdownProcessor/releases"><img src="https://img.shields.io/github/v/release/EtheaDev/MarkdownProcessor?label=release&amp;color=blue" alt="Latest release" /></a>
+<a href="https://www.embarcadero.com/products/delphi"><img src="https://img.shields.io/badge/Delphi-XE6%2B-e62329.svg" alt="Delphi XE6+" /></a>
+<a href="https://docwiki.embarcadero.com/RADStudio/en/Main_Page"><img src="https://img.shields.io/badge/Platform-VCL%20%7C%20FMX-8a2be2.svg" alt="Platform: VCL and FMX" /></a>
+<a href="https://spec.commonmark.org/0.31.2/"><img src="https://img.shields.io/badge/CommonMark-0.31.2%20652%2F652-1f6feb.svg" alt="CommonMark 0.31.2" /></a>
+<a href="https://github.github.com/gfm/"><img src="https://img.shields.io/badge/GFM-0.29%2024%2F24-24292f.svg" alt="GFM 0.29" /></a>
+<a href="https://katex.org/"><img src="https://img.shields.io/badge/Math-35%2F35-008080.svg" alt="Math formulas" /></a>
+<a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts"><img src="https://img.shields.io/badge/Alerts-20%2F20-d29922.svg" alt="GitHub alerts" /></a>
+<a href="Tests/CONFORMANCE.md"><img src="https://img.shields.io/badge/Tests-804%2F804%20passing-2ea44f.svg" alt="Conformance tests" /></a></p>
+<p><img src="/images/SupportingDelphi.jpg" alt="Support Delphi" /></p>
 <p><a href="https://www.embarcadero.com/">www.embarcadero.com</a> - <a href="https://learndelphi.org/">learndelphi.org</a></p>
+<p>A Pascal (Delphi) library that processes markdown text/files to HTML.</p>
+<h2 id="documentation">Documentation</h2>
+<p>Follow the <a href="https://ethea.it/docs/markdowntools/">Project Site</a> to know all the markdown tools and the Delphi components: Markdown Processor, Markdown Text Editor and Markdown Help Viewer.</p>
 <hr />
-<h2>Using the MarkDownToHTML.exe utility</h2>
+<h2 id="setup-for-automatic-installation-of-the-librarycomponent-and-utilities">Setup for automatic installation of the Library/Component and Utilities</h2>
+<p>A ready-to-use “Installer” is located in the Release area: <a href="https://github.com/EtheaDev/MarkdownProcessor/releases/latest/download/MarkdownProcessor_Setup.exe">Download the Installer</a>.</p>
+<p>The Installer automatically detects your Delphi versions (from XE6 to 13 Florence), installs the sources, builds and installs the packages with the TMarkdownToHTML component and adds the source paths. It also installs the <strong>MarkDownToHTML.exe</strong> utility, 32 or 64 bit.</p>
+<p><img src="./images/Setup.png" alt="Setup" /></p>
+<p>To install manually, open <code>Packages\&lt;Delphi version&gt;\MarkdownProcessor.groupproj</code>, build the runtime (<code>MarkdownProcessor</code>) and install the design-time (<code>dclMarkdownProcessor</code>) packages, or run <code>Packages\BuildAllPackages&lt;Delphi version&gt;.ps1</code> (for example <code>BuildAllPackagesD13.ps1</code>).</p>
+<hr />
+<h2 id="using-the-markdowntohtmlexe-utility">Using the MarkDownToHTML.exe utility</h2>
 <p>With MarkDownToHTML.exe you can transform a markdown file to HTML using different markdown dialects or StyleSheet.</p>
-<p><a href="https://github.com/EtheaDev/MarkdownProcessor/releases/latest/download/MarkDownToHTML.exe">Download the utility</a>.</p>
 <p>run <strong>MarkDownToHTML.exe help processfile</strong> for a complete help.</p>
 <p>Look into Cmd\MarkdownToHTML\Test\MarkDownToHTML_Test.cmd for examples</p>
 <hr />
-<h2>Basic Informations for Delphi users</h2>
-<p>This is a Pascal (Delphi) library that processes markdown to HTML.
-At present the following dialects of markdown are supported:</p>
+<h2 id="basic-informations-for-delphi-users">Basic Informations for Delphi users</h2>
+<p>This is a Pascal (Delphi) library that processes markdown to HTML. At present the following dialects of markdown are supported:</p>
 <ul>
-<li>The Daring Fireball dialect
-(see <a href="https://daringfireball.net/projects/markdown/">https://daringfireball.net/projects/markdown/</a>)</li>
-<li>Almost complete support for CommonMark dialect
-(translated from <a href="http://commonmark.org/">http://commonmark.org/</a>)</li>
-<li>Enhanced TxtMark dialect
-(translated from <a href="https://github.com/rjeschke/txtmark">https://github.com/rjeschke/txtmark</a>)</li>
+<li>
+<p><strong>GitHub</strong> (<code>mdGitHub</code>, the <strong>default</strong> dialect): what github.com renders, GFM plus math, alerts, mermaid and graph diagrams.</p>
+</li>
+<li>
+<p><strong>GitHub Flavored Markdown 0.29</strong> (<code>mdGFM</code>): CommonMark plus tables, task
+list items, strikethrough, extended autolinks and disallowed raw HTML, all the 24 examples of the specification pass (see <a href="https://github.github.com/gfm/">https://github.github.com/gfm/</a>)</p>
+</li>
+<li>
+<p><strong>CommonMark 0.31.2</strong> (<code>mdCommonMark</code>): complete support, all the 652 examples of the specification pass (see <a href="https://spec.commonmark.org/0.31.2/">https://spec.commonmark.org/0.31.2/</a>)</p>
+</li>
+<li>
+<p>The Daring Fireball dialect (<code>mdDaringFireball</code>)
+(see <a href="https://daringfireball.net/projects/markdown/">https://daringfireball.net/projects/markdown/</a>)</p>
+</li>
+<li>
+<p>Enhanced TxtMark dialect (<code>mdTxtMark</code>)
+(translated from <a href="https://github.com/rjeschke/txtmark">https://github.com/rjeschke/txtmark</a>)</p>
+</li>
 </ul>
-<h3>Using the Library with Delphi</h3>
-<p>Declare a variable of the class TMarkdownProcessor:</p>
-<div style="font-family: Arial, 'Courier New', monospace; font-size: 16pt;  background-color: #FFFFFF; color: #000000;">
-<pre><code><span>     </span><span style="color: #0000FF; font-weight: bold; ">var</span>
-<span>       md </span><span style="color: #555555; ">:</span><span> TMarkdownProcessor</span><span style="color: #555555; ">;</span>
+<p><code>mdGitHub</code>, <code>mdCommonMark</code> and <code>mdGFM</code> run on a new engine available from 2.0 version (block parser, inline parser and HTML renderer written after the parsing strategy of the CommonMark
+specification) that can also return a read-only syntax tree.</p>
+<p><code>mdDaringFireball</code> and <code>mdTxtMark</code> keep the original engine, unchanged.</p>
+<p>Optional syntax of the new engine, enabled one by one with <code>Config.Extensions</code> (<code>mdGitHub</code> enables GFM + math + alerts + mermaid, <code>mdGFM</code> the five GFM extensions, <code>mdCommonMark</code> none):</p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mexTables</code>, <code>mexTaskLists</code>, <code>mexStrikethrough</code>, <code>mexAutolinks</code>, <code>mexTagFilter</code></td>
+<td>GFM extensions</td>
+</tr>
+<tr>
+<td><code>mexMath</code></td>
+<td><code>$x$</code>, <code>$$x$$</code>, <code>$$</code> blocks, <code>```math</code> (KaTeX/MathJax ready HTML)</td>
+</tr>
+<tr>
+<td><code>mexAlerts</code></td>
+<td>GitHub alerts: <code>&gt; [!NOTE]</code>, <code>[!TIP]</code>, <code>[!IMPORTANT]</code>, <code>[!WARNING]</code>, <code>[!CAUTION]</code></td>
+</tr>
+<tr>
+<td><code>mexSubscript</code>, <code>mexSuperscript</code>, <code>mexInsert</code>, <code>mexMark</code></td>
+<td><code>~x~</code>, <code>^x^</code>, <code>++x++</code>, <code>==x==</code></td>
+</tr>
+<tr>
+<td><code>mexSmartTypography</code></td>
+<td><code>--</code> <code>---</code> <code>...</code> <code>(C)</code> <code>(R)</code> <code>(TM)</code> <code>&lt;&lt;</code> <code>&gt;&gt;</code> and curly quotes</td>
+</tr>
+<tr>
+<td><code>mexHeadingAttributes</code>, <code>mexAutoHeadingIds</code></td>
+<td><code># Title {#id}</code>, GitHub-style heading ids</td>
+</tr>
+<tr>
+<td><code>mexWikiLinks</code></td>
+<td><code>[[...]]</code>, rendered by <code>Config.specialLinkEmitter</code></td>
+</tr>
+<tr>
+<td><code>mexMermaid</code></td>
+<td><code>```mermaid</code> written as <code>&lt;pre class=&quot;mermaid&quot;&gt;</code> for mermaid.js</td>
+</tr>
+</tbody>
+</table>
+<p>Math is written for KaTeX/MathJax by default; for a viewer without JavaScript (such as HTMLViewer) set <code>Config.MathRendering := mmrCodeCogsImage</code> to get <code>&lt;img&gt;</code> from latex.codecogs.com. Mermaid diagrams need mermaid.js in the page (e.g. WebView2); elsewhere the <code>&lt;pre&gt;</code> shows their source.</p>
+<p>Upgrading from a previous 1.x version: read <a href="docs/MIGRATION.md">docs/MIGRATION.md</a>.</p>
+<h2 id="the-tmarkdowntohtml-component">The TMarkdownToHTML component</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img src="./images/markdown-html-64.png" alt="TMarkdownToHTML" /><!-- raw HTML omitted --><strong>TMarkdownToHTML</strong></td>
+<td>Non-visual component (unit <code>MarkdownProcessorComponents.pas</code>, palette page <em>Markdown</em>) that holds the options of the processor (<code>ProcessorDialect</code>, <code>Extensions</code>, <code>AllowUnsafe</code>, <code>MathRendering</code>, <code>CssStyle</code>) and converts <code>MarkdownContent</code> into <code>HtmlContent</code> every time the content or an option changes. By default it uses the GitHub dialect and enables all the legacy extensions (subscript, superscript, insert, mark, smart typography, heading ids, wiki links).</td>
+</tr>
+</tbody>
+</table>
+<p>Properties, methods and examples: <a href="https://ethea.it/docs/markdowntools/MarkdownProcessor/TMarkdownToHTML-Component">TMarkdownToHTML Component</a>.</p>
+<h3 id="using-the-library-with-delphi">Using the Library with Delphi</h3>
+<p>The library can be used in two ways:</p>
+<ul>
+<li>with the <strong>TMarkdownToHTML component</strong> (unit <code>MarkdownProcessorComponents.pas</code>): drop it on a form, set its options in the Object Inspector and read the HTML; the conversion is repeated automatically when the content or an option changes;</li>
+<li>with the <strong>TMarkdownProcessor class</strong> (unit <code>MarkdownProcessor.pas</code>): create the processor of the dialect you want, configure it and call <code>Process</code>.</li>
+</ul>
+<p>With the component:</p>
+<div style="font-family: Arial, 'Courier New', monospace; font-size: 12pt;  background-color: #191D22; color: #FFFFFF;">
+<pre><code><span>MarkdownToHTML</span><span style="color: #D4D4D4; ">.</span><span>MarkdownContent</span><span style="color: #D4D4D4; ">.</span><span>Text </span><span style="color: #D4D4D4; ">:=</span><span> MarkdownText</span><span style="color: #D4D4D4; ">;</span>
+<span>LHTMLText </span><span style="color: #D4D4D4; ">:=</span><span> MarkdownToHTML</span><span style="color: #D4D4D4; ">.</span><span>HtmlContent</span><span style="color: #D4D4D4; ">.</span><span>Text</span><span style="color: #D4D4D4; ">;</span>
 </code></pre>
 </div>
-<p>Create a TMarkdownProcessor (MarkdownProcessor.pas) of the dialect you want:</p>
-<div style="font-family: Arial, 'Courier New', monospace; font-size: 16pt;  background-color: #FFFFFF; color: #000000;">
-<pre><code><span>       md </span><span style="color: #555555; ">:=</span><span> TMarkdownProcessor</span><span style="color: #555555; ">.</span><span>createDialect</span><span style="color: #555555; ">(</span><span>mdDaringFireball</span><span style="color: #555555; ">)</span>
+<p>With the class:</p>
+<div style="font-family: Arial, 'Courier New', monospace; font-size: 12pt;  background-color: #191D22; color: #FFFFFF;">
+<pre><code><span>md </span><span style="color: #D4D4D4; ">:=</span><span> TMarkdownProcessor</span><span style="color: #D4D4D4; ">.</span><span>CreateDialect</span><span style="color: #D4D4D4; ">;</span><span>   </span><span style="color: #6A9955; font-style: italic; ">// mdGitHub, or pass the dialect</span>
+<span style="color: #569CD6; font-weight: bold; ">try</span>
+<span>  md</span><span style="color: #D4D4D4; ">.</span><span>Config</span><span style="color: #D4D4D4; ">.</span><span>Extensions </span><span style="color: #D4D4D4; ">:=</span><span> md</span><span style="color: #D4D4D4; ">.</span><span>Config</span><span style="color: #D4D4D4; ">.</span><span>Extensions </span><span style="color: #D4D4D4; ">+</span><span> </span><span style="color: #D4D4D4; ">[</span><span>mexMark</span><span style="color: #D4D4D4; ">];</span><span>  </span><span style="color: #6A9955; font-style: italic; ">// optional syntax</span>
+<span>  LHTMLText </span><span style="color: #D4D4D4; ">:=</span><span> md</span><span style="color: #D4D4D4; ">.</span><span>Process</span><span style="color: #D4D4D4; ">(</span><span>markdown</span><span style="color: #D4D4D4; ">);</span><span>           </span><span style="color: #6A9955; font-style: italic; ">// an HTML fragment, not a full page</span>
+<span style="color: #569CD6; font-weight: bold; ">finally</span>
+<span>  md</span><span style="color: #D4D4D4; ">.</span><span>Free</span><span style="color: #D4D4D4; ">;</span>
+<span style="color: #569CD6; font-weight: bold; ">end</span><span style="color: #D4D4D4; ">;</span>
 </code></pre>
 </div>
-<p>Decide whether you want to allow active content</p>
-<div style="font-family: Arial, 'Courier New', monospace; font-size: 16pt;  background-color: #FFFFFF; color: #000000;">
-<pre><code><span>       md</span><span style="color: #555555; ">.</span><span>AllowUnSafe </span><span style="color: #555555; ">:=</span><span> true</span><span style="color: #555555; ">;</span>
-</code></pre>
-</div>
-<p>Note: you should only set this to true if you <em>need</em> to - active content can be a significant safety/security issue.</p>
-<p>Generate HTML fragments from Markdown content:</p>
-<div style="font-family: Arial, 'Courier New', monospace; font-size: 16pt;  background-color: #FFFFFF; color: #000000;">
-<pre><code><span>       html </span><span style="color: #555555; ">:=</span><span> md</span><span style="color: #555555; ">.</span><span>process</span><span style="color: #555555; ">(</span><span>markdown</span><span style="color: #555555; ">);</span>
-</code></pre>
-</div>
-<p>Note that the HTML returned is an HTML fragment, not a full HTML page.</p>
-<p>Do not forget to dispose of the object after the use:</p>
-<div style="font-family: Arial, 'Courier New', monospace; font-size: 16pt;  background-color: #FFFFFF; color: #000000;">
-<pre><code><span>       md</span><span style="color: #555555; ">.</span><span>free</span>
-</code></pre>
-</div>
-<p>Large rework was made for adding support for tables, math formulas, etc.</p>
-<h2>Delphi projects Examples</h2>
+<p>Safe mode is the default (<code>AllowUnsafe = False</code>): set it to <code>True</code> only with trusted content.</p>
+<p>The complete guide (dialects, extensions, math and mermaid, syntax tree, hooks, safe mode) is in the online documentation:
+<a href="https://ethea.it/docs/markdowntools/MarkdownProcessor/Markdown-Processor">Markdown Processor</a> and <a href="https://ethea.it/docs/markdowntools/MarkdownProcessor/TMarkdownToHTML-Component">TMarkdownToHTML Component</a>.</p>
+<h3 id="conformance-tests">Conformance tests</h3>
+<p>The DUnitX test project (Delphi 13, Win32 and Win64) is in the <code>Tests</code> folder:
+run <code>Tests\RunTests.cmd</code>. It checks the official CommonMark and GFM examples,
+the math, alerts, extensions and safe mode corpora, pathological inputs, and
+that the output of the legacy dialects does not change. The results are in
+<a href="Tests/CONFORMANCE.md">Tests/CONFORMANCE.md</a>.</p>
+<h2 id="delphi-projects-examples">Delphi projects Examples</h2>
 <p>This library is used in two projects:</p>
 <ul>
 <li><a href="https://github.com/EtheaDev/MarkdownShellExtensions">MarkdownShellExtensions</a></li>
 </ul>
 <p>A collection of tools for markdown files, to edit and view content, with an advanced Editor:</p>
-<p><img src="./images/MDTextEditorLight.png" alt="Markdown Text Editor"/></p>
+<p><img src="./images/MDTextEditorLight.png" alt="Markdown Text Editor" /></p>
 <ul>
 <li><a href="https://github.com/EtheaDev/MarkdownHelpViewer">MarkdownHelpViewer</a></li>
 </ul>
 <p>An integrated help system based on files in Markdown format (and also html), for Delphi applications:</p>
-<p><img src="./images/ContentPage.png" alt="Markdown HelpViewer"/></p>
-<h2>Release Notes</h2>
+<p><img src="./images/ContentPage.png" alt="Markdown HelpViewer" /></p>
+<h2 id="demo">Demo</h2>
+<p>The VCL demo in <code>Demo\MarkdownProcessorDemo</code> converts the sample document <code>TestFile\MarkDown Support Test.md</code> (or any Markdown file) with the component: you can change the dialect and the legacy extensions and open the result in the browser, with math formulas and mermaid diagrams.</p>
+<p><img src="./images/MarkdownProcessorDemo.png" alt="Markdown Processor Demo" /></p>
+<p>More details: <a href="https://ethea.it/docs/markdowntools/MarkdownProcessor/TMarkdownToHTML-Demo">Markdown Processor Demo</a>. Complete documentation of the library: <a href="https://ethea.it/docs/markdowntools/MarkdownProcessor/Markdown-Processor">Markdown Processor</a>.</p>
+<h2 id="release-notes">Release Notes</h2>
+<p>08 Oct 2026: ver. 2.0.0 (major version: new CommonMark/GFM engine)</p>
+<ul>
+<li>New engine (block parser, inline parser, HTML renderer) written after the parsing strategy of the CommonMark specification, still compatible from Delphi XE3</li>
+<li><code>mdCommonMark</code> now runs on the new engine: CommonMark 0.31.2, all the 652 examples of the specification pass</li>
+<li>New dialect <code>mdGFM</code>: GitHub Flavored Markdown 0.29 (tables, task lists, strikethrough, extended autolinks, disallowed raw HTML), all the 24 examples pass</li>
+<li>New dialect <code>mdGitHub</code>, the new <strong>default</strong> (<code>DefaultMarkdownDialect</code>, <code>CreateDialect</code> without arguments): GFM + math + GitHub alerts + mermaid, as github.com</li>
+<li><code>mdDaringFireball</code> and <code>mdTxtMark</code> keep the original engine with exactly the same output (checked by snapshot tests); the new dialects are appended to <code>TMarkdownProcessorDialect</code>, existing ordinals unchanged</li>
+<li>Optional syntax as individual flags (<code>Config.Extensions</code>): math, GitHub alerts, mermaid, subscript, superscript, insert, mark, smart typography, <code>{#id}</code> heading attributes, GitHub-style heading ids, wiki links</li>
+<li>Math formulas: KaTeX/MathJax markup (for viewers with JavaScript, e.g. WebView2) or codecogs images (<code>Config.MathRendering</code>, for HTMLViewer)</li>
+<li>Mermaid diagrams written as <code>&lt;pre class=&quot;mermaid&quot;&gt;</code> for mermaid.js</li>
+<li>Read-only syntax tree <code>IMarkdownNode</code> with source line ranges: <code>TMarkdownProcessor.Parse</code> / <code>Render</code></li>
+<li>New safe mode for the new engine: raw HTML omitted, <code>javascript:</code>/<code>vbscript:</code>/<code>file:</code>/<code>data:</code> links emptied</li>
+<li>Hooks kept: <code>codeBlockEmitter</code> receives every code block with its whole info string (mermaid included), <code>specialLinkEmitter</code> the <code>[[...]]</code> links</li>
+<li>Linear time on pathological inputs; no memory leaks</li>
+<li>New Delphi packages <code>MarkdownProcessor</code> (runtime) and <code>dclMarkdownProcessor</code> (design-time) for Delphi XE6 to 13, with build scripts</li>
+<li>New non-visual component <code>TMarkdownToHTML</code> (all the legacy extensions enabled by default) and new VCL demo <code>Demo\MarkdownProcessorDemo</code></li>
+<li>Updated <code>MarkDown Support Test.md</code>: every feature of the GitHub dialect and of the legacy extensions</li>
+<li>New Setup for automatic installation, with optional MarkDownToHTML.exe (32 or 64 bit)</li>
+<li>MarkDownToHTML.exe: new <code>-dialect:GitHub</code> (default) and <code>-dialect:GFM</code>; executables built in <code>Cmd\Win32</code> and <code>Cmd\Win64</code></li>
+<li>New DUnitX test project (Win32 and Win64): official CommonMark and GFM examples, math, alerts, extensions, safe mode, hooks, syntax tree, performance; results in <a href="Tests/CONFORMANCE.md">Tests/CONFORMANCE.md</a></li>
+<li>Breaking changes for <code>mdCommonMark</code> (tables and strikethrough need GFM/GitHub, non-standard syntax off by default, new math markup, raw HTML omitted in safe mode): see <a href="docs/MIGRATION.md">docs/MIGRATION.md</a></li>
+</ul>
 <p>17 Jun 2026: ver. 1.4.1</p>
 <ul>
 <li>fixed tables: inline constructs no longer span cells</li>
@@ -108,10 +304,10 @@ At present the following dialects of markdown are supported:</p>
 </ul>
 <p>11 Jun 2026: ver. 1.4.0</p>
 <ul>
-<li>Added &ldquo;-unsafe&rdquo; command line option to MarkDownToHTML.exe (safe mode is the default)</li>
-<li>Fixed safe mode: unsafe HTML elements (script, iframe, object, applet, frame&hellip;) are now correctly escaped</li>
+<li>Added “-unsafe” command line option to MarkDownToHTML.exe (safe mode is the default)</li>
+<li>Fixed safe mode: unsafe HTML elements (script, iframe, object, applet, frame…) are now correctly escaped</li>
 <li>Math formulas: replaced the deprecated Google Chart API with the CodeCogs LaTeX renderer</li>
-<li>Math formulas: added support for centered formula blocks using the <div style="text-align:center;"><img src="https://latex.codecogs.com/png.image?..." alt="... "/></div> syntax</li>
+<li>Math formulas: added support for centered formula blocks using the <span class="math">\[...\]</span> syntax</li>
 <li>Improved tables support</li>
 <li>TUtils.codeEncode now encodes spaces as %20</li>
 <li>Aligned with upstream FPC-markdown by Miguel A. Risco-Castillo</li>
@@ -135,14 +331,14 @@ At present the following dialects of markdown are supported:</p>
 <li>Removed unused Dialect mdAsciiDoc</li>
 <li>changed position of enumerated dialect mdCommonMark for backward compatibility with Delphi-Markdown</li>
 </ul>
-<h2>License</h2>
+<h2 id="license">License</h2>
 <p>Copyright (c) Ethea S.r.l.</p>
-<p>Licensed under the Apache License, Version 2.0 (the &ldquo;License&rdquo;);</p>
+<p>Licensed under the Apache License, Version 2.0 (the “License”);</p>
 <p>you may not use this file except in compliance with the License.</p>
 <p>You may obtain a copy of the License at</p>
 <p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
-<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &ldquo;AS IS&rdquo; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
-<h2>Contributors</h2>
+<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+<h2 id="contributors">Contributors</h2>
 <p><strong>MarkdownProcessor</strong> implementation is a fork of FPC-markdown by <strong>Miguel A. Risco-Castillo</strong>
 <a href="https://github.com/mriscoc/fpc-markdown">FPC-markdown</a></p>
 <p>FPC-markdown implementation is a fork of <strong>Grahame Grieve</strong> pascal port
@@ -151,7 +347,9 @@ At present the following dialects of markdown are supported:</p>
 <p><strong>MarkDownToHTML.exe</strong> is a CLI based on the project:</p>
 <p><strong>Italian Delphi Day 2020: <em>Una CLI che i tuoi utenti ameranno</em></strong></p>
 <p>by <em>Marco Breveglieri</em></p>
-<p><a href="https://www.breveglieri.it/eventi/2020-06-11-delphiday-creare-client-cli/">Go to Slides and Demos page&hellip;</a></p>
+<p><a href="https://www.breveglieri.it/eventi/2020-06-11-delphiday-creare-client-cli/">Go to Slides and Demos page…</a></p>
 <p>It also uses <strong>CommandLineParser</strong></p>
 <p><a href="https://github.com/VSoftTechnologies/VSoft.CommandLineParser">VSoft.CommandLineParser</a></p>
-<p>by <em>Vincent Parret</em>, licensed under the Apache License, Version 2.0 (the &ldquo;License&rdquo;);</p>
+<p>by <em>Vincent Parret</em>, licensed under the Apache License, Version 2.0 (the “License”);</p>
+</body>
+</html>

@@ -1,0 +1,290 @@
+[
+ {
+  "markdown": "H~2~O\n",
+  "html": "<p>H<sub>2</sub>O</p>\n",
+  "example": 1,
+  "section": "Subscript"
+ },
+ {
+  "markdown": "~x\n",
+  "html": "<p>~x</p>\n",
+  "example": 2,
+  "section": "Subscript"
+ },
+ {
+  "markdown": "~~x~~\n",
+  "html": "<p>~~x~~</p>\n",
+  "example": 3,
+  "section": "Subscript"
+ },
+ {
+  "markdown": "a ~ b ~ c\n",
+  "html": "<p>a ~ b ~ c</p>\n",
+  "example": 4,
+  "section": "Subscript"
+ },
+ {
+  "markdown": "x^2^\n",
+  "html": "<p>x<sup>2</sup></p>\n",
+  "example": 5,
+  "section": "Superscript"
+ },
+ {
+  "markdown": "2^10^ = 1024\n",
+  "html": "<p>2<sup>10</sup> = 1024</p>\n",
+  "example": 6,
+  "section": "Superscript"
+ },
+ {
+  "markdown": "a^b\n",
+  "html": "<p>a^b</p>\n",
+  "example": 7,
+  "section": "Superscript"
+ },
+ {
+  "markdown": "++inserted++\n",
+  "html": "<p><ins>inserted</ins></p>\n",
+  "example": 8,
+  "section": "Insert"
+ },
+ {
+  "markdown": "a + b\n",
+  "html": "<p>a + b</p>\n",
+  "example": 9,
+  "section": "Insert"
+ },
+ {
+  "markdown": "C++ and C++\n",
+  "html": "<p>C++ and C++</p>\n",
+  "example": 10,
+  "section": "Insert"
+ },
+ {
+  "markdown": "==marked==\n",
+  "html": "<p><mark>marked</mark></p>\n",
+  "example": 11,
+  "section": "Mark"
+ },
+ {
+  "markdown": "a == b\n",
+  "html": "<p>a == b</p>\n",
+  "example": 12,
+  "section": "Mark"
+ },
+ {
+  "markdown": "**==bold mark==**\n",
+  "html": "<p><strong><mark>bold mark</mark></strong></p>\n",
+  "example": 13,
+  "section": "Mark"
+ },
+ {
+  "markdown": "~~del~~ and ~sub~\n",
+  "html": "<p><del>del</del> and <sub>sub</sub></p>\n",
+  "example": 14,
+  "section": "Subscript and strikethrough"
+ },
+ {
+  "markdown": "H~2~O ~~old~~\n",
+  "html": "<p>H<sub>2</sub>O <del>old</del></p>\n",
+  "example": 15,
+  "section": "Subscript and strikethrough"
+ },
+ {
+  "markdown": "a -- b --- c...\n",
+  "html": "<p>a – b — c…</p>\n",
+  "example": 16,
+  "section": "Smart typography"
+ },
+ {
+  "markdown": "(C) (R) (TM)\n",
+  "html": "<p>© ® ™</p>\n",
+  "example": 17,
+  "section": "Smart typography"
+ },
+ {
+  "markdown": "<< a >>\n",
+  "html": "<p>« a »</p>\n",
+  "example": 18,
+  "section": "Smart typography"
+ },
+ {
+  "markdown": "\"Hello\" she said\n",
+  "html": "<p>“Hello” she said</p>\n",
+  "example": 19,
+  "section": "Smart typography"
+ },
+ {
+  "markdown": "`a -- b`\n",
+  "html": "<p><code>a -- b</code></p>\n",
+  "example": 20,
+  "section": "Smart typography"
+ },
+ {
+  "markdown": "<http://a--b.com>\n",
+  "html": "<p><a href=\"http://a--b.com\">http://a--b.com</a></p>\n",
+  "example": 21,
+  "section": "Smart typography"
+ },
+ {
+  "markdown": "# Title {#custom-id}\n",
+  "html": "<h1 id=\"custom-id\">Title</h1>\n",
+  "example": 22,
+  "section": "Heading attributes"
+ },
+ {
+  "markdown": "Setext {#set}\n===\n",
+  "html": "<h1 id=\"set\">Setext</h1>\n",
+  "example": 23,
+  "section": "Heading attributes"
+ },
+ {
+  "markdown": "# No id \\{#x}\n",
+  "html": "<h1>No id {#x}</h1>\n",
+  "example": 24,
+  "section": "Heading attributes"
+ },
+ {
+  "markdown": "Paragraph {#p}\n",
+  "html": "<p>Paragraph {#p}</p>\n",
+  "example": 25,
+  "section": "Heading attributes"
+ },
+ {
+  "markdown": "# Hello World\n",
+  "html": "<h1 id=\"hello-world\">Hello World</h1>\n",
+  "example": 26,
+  "section": "Auto heading ids"
+ },
+ {
+  "markdown": "## Foo\n## Foo\n",
+  "html": "<h2 id=\"foo\">Foo</h2>\n<h2 id=\"foo-1\">Foo</h2>\n",
+  "example": 27,
+  "section": "Auto heading ids"
+ },
+ {
+  "markdown": "# What's *new* in 2.0?\n",
+  "html": "<h1 id=\"whats-new-in-20\">What's <em>new</em> in 2.0?</h1>\n",
+  "example": 28,
+  "section": "Auto heading ids"
+ },
+ {
+  "markdown": "# Città e `code`\n",
+  "html": "<h1 id=\"città-e-code\">Città e <code>code</code></h1>\n",
+  "example": 29,
+  "section": "Auto heading ids"
+ },
+ {
+  "markdown": "# A {#x}\n# A\n# x\n",
+  "html": "<h1 id=\"x\">A</h1>\n<h1 id=\"a\">A</h1>\n<h1 id=\"x-1\">x</h1>\n",
+  "example": 30,
+  "section": "Heading attributes and auto ids"
+ },
+ {
+  "markdown": "See [[Main Page]].\n",
+  "html": "<p>See [[Main Page]].</p>\n",
+  "example": 31,
+  "section": "Wiki links"
+ },
+ {
+  "markdown": "[[*bold* page]]\n",
+  "html": "<p>[[<em>bold</em> page]]</p>\n",
+  "example": 32,
+  "section": "Wiki links"
+ },
+ {
+  "markdown": "[[]]\n",
+  "html": "<p>[[]]</p>\n",
+  "example": 33,
+  "section": "Wiki links"
+ },
+ {
+  "markdown": "H~2~O x^2^ ++a++ ==b== -- (C) [[w]] # x {#y}\n",
+  "html": "<p>H~2~O x^2^ ++a++ ==b== -- (C) [[w]] # x {#y}</p>\n",
+  "example": 34,
+  "section": "Disabled"
+ },
+ {
+  "markdown": "# Title {#id}\n",
+  "html": "<h1>Title {#id}</h1>\n",
+  "example": 35,
+  "section": "Disabled"
+ },
+ {
+  "markdown": "```mermaid\ngraph TD\n  A --> B\n```\n",
+  "html": "<pre class=\"mermaid\">graph TD\n  A --&gt; B\n</pre>\n",
+  "example": 36,
+  "section": "Mermaid"
+ },
+ {
+  "markdown": "```Mermaid\nx\n```\n",
+  "html": "<pre class=\"mermaid\">x\n</pre>\n",
+  "example": 37,
+  "section": "Mermaid"
+ },
+ {
+  "markdown": "```mermaid title\n<b>\n```\n",
+  "html": "<pre class=\"mermaid\">&lt;b&gt;\n</pre>\n",
+  "example": 38,
+  "section": "Mermaid"
+ },
+ {
+  "markdown": "```mermaidx\nx\n```\n",
+  "html": "<pre><code class=\"language-mermaidx\">x\n</code></pre>\n",
+  "example": 39,
+  "section": "Mermaid"
+ },
+ {
+  "markdown": "    graph TD\n",
+  "html": "<pre><code>graph TD\n</code></pre>\n",
+  "example": 40,
+  "section": "Mermaid"
+ },
+ {
+  "markdown": "```mermaid\ngraph TD\n```\n",
+  "html": "<pre><code class=\"language-mermaid\">graph TD\n</code></pre>\n",
+  "example": 41,
+  "section": "Mermaid off"
+ },
+ {
+  "markdown": "$E=mc^2$\n",
+  "html": "<p><img class=\"math\" src=\"https://latex.codecogs.com/png.image?E%3Dmc%5E2\" alt=\"E=mc^2\" /></p>\n",
+  "example": 42,
+  "section": "Math images"
+ },
+ {
+  "markdown": "$$\n\\frac{a}{b}\n$$\n",
+  "html": "<div class=\"math\" style=\"text-align:center;\"><img class=\"math\" src=\"https://latex.codecogs.com/png.image?%5Cfrac%7Ba%7D%7Bb%7D\" alt=\"\\frac{a}{b}\" /></div>\n",
+  "example": 43,
+  "section": "Math images"
+ },
+ {
+  "markdown": "$a<b$\n",
+  "html": "<p><img class=\"math\" src=\"https://latex.codecogs.com/png.image?a%3Cb\" alt=\"a&lt;b\" /></p>\n",
+  "example": 44,
+  "section": "Math images"
+ },
+ {
+  "markdown": "$$x$$ inline\n",
+  "html": "<p><img class=\"math\" src=\"https://latex.codecogs.com/png.image?x\" alt=\"x\" /> inline</p>\n",
+  "example": 45,
+  "section": "Math images"
+ },
+ {
+  "markdown": "![alt $x$](i.png)\n",
+  "html": "<p><img src=\"i.png\" alt=\"alt x\" /></p>\n",
+  "example": 46,
+  "section": "Math images"
+ },
+ {
+  "markdown": "> [!NOTE]\n> $x$ and ~~y~~\n",
+  "html": "<div class=\"markdown-alert markdown-alert-note\">\n<p class=\"markdown-alert-title\">Note</p>\n<p><span class=\"math\">\\(x\\)</span> and <del>y</del></p>\n</div>\n",
+  "example": 47,
+  "section": "GitHub dialect"
+ },
+ {
+  "markdown": "It costs $5 and www.example.com\n",
+  "html": "<p>It costs $5 and <a href=\"http://www.example.com\">www.example.com</a></p>\n",
+  "example": 48,
+  "section": "GitHub dialect"
+ }
+]

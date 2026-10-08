@@ -1,0 +1,152 @@
+[
+ {
+  "markdown": "<div>\nfoo\n</div>\n",
+  "html": "<!-- raw HTML omitted -->\n",
+  "example": 1,
+  "section": "Raw HTML"
+ },
+ {
+  "markdown": "<script>alert(1)</script>\n",
+  "html": "<!-- raw HTML omitted -->\n",
+  "example": 2,
+  "section": "Raw HTML"
+ },
+ {
+  "markdown": "<iframe src=\"https://example.com\"></iframe>\n",
+  "html": "<!-- raw HTML omitted -->\n",
+  "example": 3,
+  "section": "Raw HTML"
+ },
+ {
+  "markdown": "<!-- comment -->\n",
+  "html": "<!-- raw HTML omitted -->\n",
+  "example": 4,
+  "section": "Raw HTML"
+ },
+ {
+  "markdown": "a <b>b</b> c\n",
+  "html": "<p>a <!-- raw HTML omitted -->b<!-- raw HTML omitted --> c</p>\n",
+  "example": 5,
+  "section": "Raw HTML"
+ },
+ {
+  "markdown": "x <img src=x onerror=alert(1)> y\n",
+  "html": "<p>x <!-- raw HTML omitted --> y</p>\n",
+  "example": 6,
+  "section": "Raw HTML"
+ },
+ {
+  "markdown": "`<script>`\n",
+  "html": "<p><code>&lt;script&gt;</code></p>\n",
+  "example": 7,
+  "section": "Raw HTML"
+ },
+ {
+  "markdown": "    <script>\n",
+  "html": "<pre><code>&lt;script&gt;\n</code></pre>\n",
+  "example": 8,
+  "section": "Raw HTML"
+ },
+ {
+  "markdown": "&lt;script&gt;\n",
+  "html": "<p>&lt;script&gt;</p>\n",
+  "example": 9,
+  "section": "Raw HTML"
+ },
+ {
+  "markdown": "[x](javascript:alert(1))\n",
+  "html": "<p><a href=\"\">x</a></p>\n",
+  "example": 10,
+  "section": "Dangerous URLs"
+ },
+ {
+  "markdown": "[x](JaVaScRiPt:alert(1))\n",
+  "html": "<p><a href=\"\">x</a></p>\n",
+  "example": 11,
+  "section": "Dangerous URLs"
+ },
+ {
+  "markdown": "[x](java&#x73;cript:alert(1))\n",
+  "html": "<p><a href=\"\">x</a></p>\n",
+  "example": 12,
+  "section": "Dangerous URLs"
+ },
+ {
+  "markdown": "[x](vbscript:msgbox)\n",
+  "html": "<p><a href=\"\">x</a></p>\n",
+  "example": 13,
+  "section": "Dangerous URLs"
+ },
+ {
+  "markdown": "[x](file:///etc/passwd)\n",
+  "html": "<p><a href=\"\">x</a></p>\n",
+  "example": 14,
+  "section": "Dangerous URLs"
+ },
+ {
+  "markdown": "[x](data:text/html;base64,PHNjcmlwdD4=)\n",
+  "html": "<p><a href=\"\">x</a></p>\n",
+  "example": 15,
+  "section": "Dangerous URLs"
+ },
+ {
+  "markdown": "<javascript:alert(1)>\n",
+  "html": "<p><a href=\"\">javascript:alert(1)</a></p>\n",
+  "example": 16,
+  "section": "Dangerous URLs"
+ },
+ {
+  "markdown": "![x](javascript:alert(1))\n",
+  "html": "<p><img src=\"\" alt=\"x\" /></p>\n",
+  "example": 17,
+  "section": "Dangerous URLs"
+ },
+ {
+  "markdown": "[x]\n\n[x]: javascript:alert(1) \"t\"\n",
+  "html": "<p><a href=\"\" title=\"t\">x</a></p>\n",
+  "example": 18,
+  "section": "Dangerous URLs"
+ },
+ {
+  "markdown": "[x](https://example.com/a?b=c&d=e)\n",
+  "html": "<p><a href=\"https://example.com/a?b=c&amp;d=e\">x</a></p>\n",
+  "example": 19,
+  "section": "Allowed URLs"
+ },
+ {
+  "markdown": "[x](/relative/path)\n",
+  "html": "<p><a href=\"/relative/path\">x</a></p>\n",
+  "example": 20,
+  "section": "Allowed URLs"
+ },
+ {
+  "markdown": "[x](mailto:a@b.c)\n",
+  "html": "<p><a href=\"mailto:a@b.c\">x</a></p>\n",
+  "example": 21,
+  "section": "Allowed URLs"
+ },
+ {
+  "markdown": "<a@b.c>\n",
+  "html": "<p><a href=\"mailto:a@b.c\">a@b.c</a></p>\n",
+  "example": 22,
+  "section": "Allowed URLs"
+ },
+ {
+  "markdown": "![x](data:image/png;base64,iVBORw0KGgo=)\n",
+  "html": "<p><img src=\"data:image/png;base64,iVBORw0KGgo=\" alt=\"x\" /></p>\n",
+  "example": 23,
+  "section": "Allowed URLs"
+ },
+ {
+  "markdown": "![x](data:image/webp;base64,UklGRg==)\n",
+  "html": "<p><img src=\"data:image/webp;base64,UklGRg==\" alt=\"x\" /></p>\n",
+  "example": 24,
+  "section": "Allowed URLs"
+ },
+ {
+  "markdown": "[javascript](https://example.com)\n",
+  "html": "<p><a href=\"https://example.com\">javascript</a></p>\n",
+  "example": 25,
+  "section": "Allowed URLs"
+ }
+]

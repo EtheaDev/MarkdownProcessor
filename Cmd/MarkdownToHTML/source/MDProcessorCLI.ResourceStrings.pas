@@ -47,11 +47,11 @@ resourcestring
   StrNoStyle = '(Do not use any StyleSheet)';
   StrUnsafeMode = 'Unsafe mode';
   StrUnsafeModeOn = 'ON (active content is NOT escaped - use only with trusted sources)';
-  StrUnsafeModeOff = 'OFF (active content like <script>, <iframe>... is escaped)';
+  StrUnsafeModeOff = 'OFF (active content like <script>, <iframe>... is omitted or escaped)';
 
   // General Options
-  StrCmdTransformDialect = 'The dialect used for transformation: CommonMark (default), DaringFireball, TxtMark';
-  StrCmdUnsafeMode = 'Allow unsafe/active HTML content (<script>, <iframe>, <object>...) in the output instead of escaping it. Off by default; enable only for trusted input.';
+  StrCmdTransformDialect = 'The dialect used for transformation: GitHub (default), CommonMark, GFM, DaringFireball, TxtMark';
+  StrCmdUnsafeMode = 'Allow unsafe/active HTML content (<script>, <iframe>, <object>...) in the output instead of omitting or escaping it. Off by default; enable only for trusted input.';
 
   // Command: transform
   StrCmdTransformDescription = 'Convert a Markdown file to HTML';

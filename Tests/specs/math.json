@@ -1,0 +1,212 @@
+[
+ {
+  "markdown": "This is a $math inline$\n",
+  "html": "<p>This is a <span class=\"math\">\\(math inline\\)</span></p>\n",
+  "example": 1,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "This is a $$math inline$$\n",
+  "html": "<p>This is a <span class=\"math\">\\[math inline\\]</span></p>\n",
+  "example": 2,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "This is a $ math inline $\n",
+  "html": "<p>This is a $ math inline $</p>\n",
+  "example": 3,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "This is not a m$ath inline$\n",
+  "html": "<p>This is not a m$ath inline$</p>\n",
+  "example": 4,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "This is not a $math inlin$e\n",
+  "html": "<p>This is not a $math inlin$e</p>\n",
+  "example": 5,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "This is a $math \\$ inline$\n",
+  "html": "<p>This is a <span class=\"math\">\\(math \\$ inline\\)</span></p>\n",
+  "example": 6,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "This is a $$$math inline$$$\n",
+  "html": "<p>This is a <span class=\"math\">\\[$math inline$\\]</span></p>\n",
+  "example": 7,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "It costs $100 and $200 today\n",
+  "html": "<p>It costs $100 and $200 today</p>\n",
+  "example": 8,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "An escaped \\$x\\$ stays text\n",
+  "html": "<p>An escaped $x$ stays text</p>\n",
+  "example": 9,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "Code `$x$` stays code\n",
+  "html": "<p>Code <code>$x$</code> stays code</p>\n",
+  "example": 10,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "cost $100 and $200, and `$x$` in code\n",
+  "html": "<p>cost $100 and $200, and <code>$x$</code> in code</p>\n",
+  "example": 34,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "Unclosed $x stays text\n",
+  "html": "<p>Unclosed $x stays text</p>\n",
+  "example": 11,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "The formula $\\sqrt{3x-1}+(1+x)^2$ inline\n",
+  "html": "<p>The formula <span class=\"math\">\\(\\sqrt{3x-1}+(1+x)^2\\)</span> inline</p>\n",
+  "example": 12,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "GitLab form $`\\sqrt{3x-1}`$ inline\n",
+  "html": "<p>GitLab form <span class=\"math\">\\(\\sqrt{3x-1}\\)</span> inline</p>\n",
+  "example": 13,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "No emphasis inside $a*b*c$ here\n",
+  "html": "<p>No emphasis inside <span class=\"math\">\\(a*b*c\\)</span> here</p>\n",
+  "example": 14,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "Angle $a<b$ escapes\n",
+  "html": "<p>Angle <span class=\"math\">\\(a&lt;b\\)</span> escapes</p>\n",
+  "example": 15,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "**bold $x^2$ math**\n",
+  "html": "<p><strong>bold <span class=\"math\">\\(x^2\\)</span> math</strong></p>\n",
+  "example": 16,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "[link $x$ text](/url)\n",
+  "html": "<p><a href=\"/url\">link <span class=\"math\">\\(x\\)</span> text</a></p>\n",
+  "example": 17,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "> quoted $x$ math\n",
+  "html": "<blockquote>\n<p>quoted <span class=\"math\">\\(x\\)</span> math</p>\n</blockquote>\n",
+  "example": 18,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "Text with $\\text{a \\$ b}$ inside\n",
+  "html": "<p>Text with <span class=\"math\">\\(\\text{a \\$ b}\\)</span> inside</p>\n",
+  "example": 19,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "Broken $x\ny$ across lines\n",
+  "html": "<p>Broken $x\ny$ across lines</p>\n",
+  "example": 20,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "$$a$$ and $$b$$\n",
+  "html": "<p><span class=\"math\">\\[a\\]</span> and <span class=\"math\">\\[b\\]</span></p>\n",
+  "example": 21,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "# Heading $E=mc^2$\n",
+  "html": "<h1>Heading <span class=\"math\">\\(E=mc^2\\)</span></h1>\n",
+  "example": 22,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "Water is $\\ce{H2O}$.\n",
+  "html": "<p>Water is <span class=\"math\">\\(\\ce{H2O}\\)</span>.</p>\n",
+  "example": 35,
+  "section": "Inline math"
+ },
+ {
+  "markdown": "$$\n\\frac{a}{b}\n$$\n",
+  "html": "<div class=\"math\">\\[\n\\frac{a}{b}\n\\]</div>\n",
+  "example": 23,
+  "section": "Display math"
+ },
+ {
+  "markdown": "Before\n$$\nx\n$$\nAfter\n",
+  "html": "<p>Before</p>\n<div class=\"math\">\\[\nx\n\\]</div>\n<p>After</p>\n",
+  "example": 24,
+  "section": "Display math"
+ },
+ {
+  "markdown": "$$\n\\begin{matrix}\na & b \\\\\nc & d\n\\end{matrix}\n$$\n",
+  "html": "<div class=\"math\">\\[\n\\begin{matrix}\na &amp; b \\\\\nc &amp; d\n\\end{matrix}\n\\]</div>\n",
+  "example": 25,
+  "section": "Display math"
+ },
+ {
+  "markdown": "> $$\n> x\n> $$\n",
+  "html": "<blockquote>\n<div class=\"math\">\\[\nx\n\\]</div>\n</blockquote>\n",
+  "example": 26,
+  "section": "Display math"
+ },
+ {
+  "markdown": "- item\n\n  $$\n  x\n  $$\n",
+  "html": "<ul>\n<li>\n<p>item</p>\n<div class=\"math\">\\[\nx\n\\]</div>\n</li>\n</ul>\n",
+  "example": 27,
+  "section": "Display math"
+ },
+ {
+  "markdown": "$$\nx\n\n- y\n$$\n",
+  "html": "<div class=\"math\">\\[\nx\n\n- y\n\\]</div>\n",
+  "example": 28,
+  "section": "Display math"
+ },
+ {
+  "markdown": "$$\nunclosed\n",
+  "html": "<div class=\"math\">\\[\nunclosed\n\\]</div>\n",
+  "example": 29,
+  "section": "Display math"
+ },
+ {
+  "markdown": "$$\n$$\n",
+  "html": "<div class=\"math\">\\[\n\n\\]</div>\n",
+  "example": 30,
+  "section": "Display math"
+ },
+ {
+  "markdown": "```math\n\\sum_{i=1}^{n} i\n```\n",
+  "html": "<div class=\"math\">\\[\n\\sum_{i=1}^{n} i\n\\]</div>\n",
+  "example": 31,
+  "section": "Math fence"
+ },
+ {
+  "markdown": "```Math extra\nx\n```\n",
+  "html": "<div class=\"math\">\\[\nx\n\\]</div>\n",
+  "example": 32,
+  "section": "Math fence"
+ },
+ {
+  "markdown": "```mathematica\nx\n```\n",
+  "html": "<pre><code class=\"language-mathematica\">x\n</code></pre>\n",
+  "example": 33,
+  "section": "Math fence"
+ }
+]
