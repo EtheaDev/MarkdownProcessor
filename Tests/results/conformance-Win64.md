@@ -7,11 +7,11 @@ Comparison is strict: the only normalization is CRLF -> LF.
 |---|---|---:|---:|---:|
 | Alerts | mdGFM + mexAlerts | 20 | 20 | 100.0% |
 | CommonMark 0.31.2 | mdCommonMark | 652 | 652 | 100.0% |
-| Extensions | per section | 48 | 48 | 100.0% |
+| Extensions | per section | 56 | 56 | 100.0% |
 | GFM 0.29 | mdGFM | 24 | 24 | 100.0% |
 | Math | mdGFM + mexMath | 35 | 35 | 100.0% |
 | Safety | mdCommonMark (safe) | 25 | 25 | 100.0% |
-| **Total** | | **804** | **804** | **100.0%** |
+| **Total** | | **812** | **812** | **100.0%** |
 
 ## Alerts (mdGFM + mexAlerts)
 
@@ -66,11 +66,12 @@ Comparison is strict: the only normalization is CRLF -> LF.
 | Auto heading ids | 4 | 4 | 100.0% |  |
 | Heading attributes and auto ids | 1 | 1 | 100.0% |  |
 | Wiki links | 3 | 3 | 100.0% |  |
-| Disabled | 2 | 2 | 100.0% |  |
+| Disabled | 3 | 3 | 100.0% |  |
 | Mermaid | 5 | 5 | 100.0% |  |
 | Mermaid off | 1 | 1 | 100.0% |  |
 | Math images | 5 | 5 | 100.0% |  |
 | GitHub dialect | 2 | 2 | 100.0% |  |
+| Video | 7 | 7 | 100.0% |  |
 
 ## GFM 0.29 (mdGFM)
 

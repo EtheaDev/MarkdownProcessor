@@ -63,6 +63,7 @@ type
     [TestCase('Mermaid off', 'Mermaid off')]
     [TestCase('Math images', 'Math images')]
     [TestCase('GitHub dialect', 'GitHub dialect')]
+    [TestCase('Video', 'Video')]
     procedure Extensions_Section_Matches(const Section: string);
 
     [Test]
@@ -132,7 +133,9 @@ begin
   else if Section = 'Heading attributes and auto ids' then
     Extensions := [mexHeadingAttributes, mexAutoHeadingIds]
   else if Section = 'Wiki links' then
-    Extensions := [mexWikiLinks];
+    Extensions := [mexWikiLinks]
+  else if Section = 'Video' then
+    Extensions := [mexVideo];
   Result := TMarkdownProcessor.CreateDialect(Dialect);
   Result.AllowUnsafe := True;
   Result.Config.Extensions := Extensions;
@@ -159,7 +162,7 @@ end;
 
 procedure TExtensionsTests.Extensions_SupportTestFile_RendersAllFeatures;
 const
-  Expected: array[0..23] of string = (
+  Expected: array[0..24] of string = (
     '<h1 id="markdown-support-test">Markdown support test</h1>',
     '<h2 id="setext-heading-2">Setext heading 2</h2>',
     'two spaces at the end of a line<br />',
@@ -183,6 +186,7 @@ const
     #$2013' en dash, '#$2014' em dash, ellipsis'#$2026', '#$00A9' '#$00AE' '#$2122', '#$201C'double quotes'#$201D', '#$00AB' guillemets '#$00BB,
     '<h3 id="custom-id">Heading with a custom id</h3>',
     'Wiki link: <a class="wiki">Main Page</a>',
+    '<video src="rocket.mp4" controls title="Growth Rocket"><a href="rocket.mp4">Rocket</a></video>',
     '<p>Inline HTML: <kbd>Ctrl</kbd>+<kbd>C</kbd>');
 var
   Processor: TMarkdownProcessor;
@@ -196,7 +200,7 @@ begin
     Processor.AllowUnsafe := True;
     Processor.Config.Extensions := Processor.Config.Extensions + [mexSubscript,
       mexSuperscript, mexInsert, mexMark, mexSmartTypography, mexHeadingAttributes,
-      mexAutoHeadingIds, mexWikiLinks];
+      mexAutoHeadingIds, mexWikiLinks, mexVideo];
     Processor.Config.specialLinkEmitter := TWikiSpanEmitter.Create; // owned by Config
     Html := Processor.Process(TFile.ReadAllText(
       TPath.Combine(TPath.Combine(TTestPaths.RepositoryFolder, 'TestFile'), 'MarkDown Support Test.md'),

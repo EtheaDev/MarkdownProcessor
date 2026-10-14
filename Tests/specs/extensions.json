@@ -286,5 +286,53 @@
   "html": "<p>It costs $5 and <a href=\"http://www.example.com\">www.example.com</a></p>\n",
   "example": 48,
   "section": "GitHub dialect"
+ },
+ {
+  "markdown": "![Rocket](rocket.mp4)\n",
+  "html": "<p><video src=\"rocket.mp4\" controls><a href=\"rocket.mp4\">Rocket</a></video></p>\n",
+  "example": 49,
+  "section": "Video"
+ },
+ {
+  "markdown": "![Demo *clip*](media/clip.WebM?t=1 \"A clip\")\n",
+  "html": "<p><video src=\"media/clip.WebM?t=1\" controls title=\"A clip\"><a href=\"media/clip.WebM?t=1\">Demo clip</a></video></p>\n",
+  "example": 50,
+  "section": "Video"
+ },
+ {
+  "markdown": "![](video/demo.mov)\n",
+  "html": "<p><video src=\"video/demo.mov\" controls><a href=\"video/demo.mov\">demo.mov</a></video></p>\n",
+  "example": 51,
+  "section": "Video"
+ },
+ {
+  "markdown": "Before ![a](b.m4v) and ![c](d.ogv#t=5) after\n",
+  "html": "<p>Before <video src=\"b.m4v\" controls><a href=\"b.m4v\">a</a></video> and <video src=\"d.ogv#t=5\" controls><a href=\"d.ogv#t=5\">c</a></video> after</p>\n",
+  "example": 52,
+  "section": "Video"
+ },
+ {
+  "markdown": "![Logo](logo.png) [Video](demo.mp4)\n",
+  "html": "<p><img src=\"logo.png\" alt=\"Logo\" /> <a href=\"demo.mp4\">Video</a></p>\n",
+  "example": 53,
+  "section": "Video"
+ },
+ {
+  "markdown": "![a ![b](x.mp4)](y.png)\n",
+  "html": "<p><img src=\"y.png\" alt=\"a b\" /></p>\n",
+  "example": 54,
+  "section": "Video"
+ },
+ {
+  "markdown": "![v ![b](x.png)](y.mp4)\n",
+  "html": "<p><video src=\"y.mp4\" controls><a href=\"y.mp4\">v b</a></video></p>\n",
+  "example": 55,
+  "section": "Video"
+ },
+ {
+  "markdown": "![Rocket](rocket.mp4)\n",
+  "html": "<p><img src=\"rocket.mp4\" alt=\"Rocket\" /></p>\n",
+  "example": 56,
+  "section": "Disabled"
  }
 ]

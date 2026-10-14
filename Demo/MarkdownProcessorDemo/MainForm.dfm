@@ -136,6 +136,20 @@ object MainForm: TMainForm
         ''
         '![Markdown logo](markdownlogo.png "Markdown")'
         ''
+        '## Video'
+        ''
+        
+          'A local video is written as an image of a video file (`.mp4`, `.w' +
+          'ebm`, `.ogv`, `.mov`, `.m4v`): WebView2 plays it, HTMLViewer show' +
+          's a link to the file.'
+        ''
+        '![Rocket](rocket.mp4 "Growth Rocket")'
+        ''
+        
+          'Rocket animation: "Growth Rocket" from [LottieFiles](https://lott' +
+          'iefiles.com/animations/growth-rocket-8RJByYsf5X), Lottie Simple L' +
+          'icense (see `rocket-LICENSE.txt`).'
+        ''
         '## Block quotes'
         ''
         '> Markdown is a plain text format for writing structured documents,'
@@ -342,7 +356,7 @@ object MainForm: TMainForm
       Left = 0
       Top = 41
       Width = 554
-      Height = 96
+      Height = 120
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 1
@@ -447,6 +461,16 @@ object MainForm: TMainForm
         Height = 17
         Caption = 'Wiki links [[x]]'
         TabOrder = 8
+        OnClick = LegacyExtensionCheckBoxClick
+      end
+      object VideoCheckBox: TCheckBox
+        Tag = 16
+        Left = 8
+        Top = 92
+        Width = 130
+        Height = 17
+        Caption = 'Video ![x](v.mp4)'
+        TabOrder = 9
         OnClick = LegacyExtensionCheckBoxClick
       end
     end

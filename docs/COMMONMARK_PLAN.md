@@ -379,3 +379,17 @@ examples (sections Mermaid, Mermaid off, Math images, GitHub dialect) and a test
 default dialect and the unchanged ordinals. The CLI writes standalone pages without
 scripts, so with the new default it sets `mmrCodeCogsImage` (math as images, as the
 previous versions did); mermaid diagrams show their source there. All corpora 804/804.
+
+## 11. Version 2.1.0
+
+- **`mexVideo`** (appended to `TMarkdownExtension`, in `LegacyExtensions`): an image whose
+  destination ends with `.mp4`, `.m4v`, `.webm`, `.ogv` or `.mov` (query and fragment
+  ignored) is rendered by `TMarkdownHtmlRenderer.RenderVideo` as
+  `<video src="..." controls [title="..."]><a href="...">alt</a></video>`; the alt text (or
+  the file name) is the fallback link for HTMLViewer. Inside the alt text of an image it
+  stays text. The renderer only: the parser and the syntax tree are unchanged.
+- **CLI**: `MarkDownToHTML.exe` uses `TCustomMarkdownToHTML.DefaultExtensions(dialect)`,
+  the defaults of the component (heading ids, video...).
+- `extensions.json` grows to 56 examples (section Video, one more in Disabled): all
+  corpora 812/812. `MarkDown Support Test.md` has a section Video (legacy snapshots
+  re-recorded: the new lines only).

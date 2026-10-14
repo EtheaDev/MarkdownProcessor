@@ -13,9 +13,9 @@ A Useful utility: **MarkDownToHTML.exe** to transform any markdown file to HTML
 [![GFM 0.29](https://img.shields.io/badge/GFM-0.29%2024%2F24-24292f.svg)](https://github.github.com/gfm/)
 [![Math formulas](https://img.shields.io/badge/Math-35%2F35-008080.svg)](https://katex.org/)
 [![GitHub alerts](https://img.shields.io/badge/Alerts-20%2F20-d29922.svg)](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts)
-[![Conformance tests](https://img.shields.io/badge/Tests-804%2F804%20passing-2ea44f.svg)](Tests/CONFORMANCE.md)
+[![Conformance tests](https://img.shields.io/badge/Tests-812%2F812%20passing-2ea44f.svg)](Tests/CONFORMANCE.md)
 
-![Support Delphi](/images/SupportingDelphi.jpg)
+![Support Delphi](./images/SupportingDelphi.jpg)
 
 [www.embarcadero.com](https://www.embarcadero.com/) - [learndelphi.org](https://learndelphi.org/)
 
@@ -44,6 +44,8 @@ To install manually, open `Packages\<Delphi version>\MarkdownProcessor.groupproj
 With MarkDownToHTML.exe you can transform a markdown file to HTML using different markdown dialects or StyleSheet.
 
 run **MarkDownToHTML.exe help processfile** for a complete help.
+
+The utility uses the same default extensions as the TMarkdownToHTML component: the ones of the dialect plus the legacy extensions (GitHub-style heading ids, `{#id}`, subscript, superscript, insert, mark, smart typography, wiki links, video).
 
 Look into Cmd\MarkdownToHTML\Test\MarkDownToHTML_Test.cmd for examples
 
@@ -83,6 +85,7 @@ Optional syntax of the new engine, enabled one by one with `Config.Extensions` (
 | `mexHeadingAttributes`, `mexAutoHeadingIds` | `# Title {#id}`, GitHub-style heading ids |
 | `mexWikiLinks` | `[[...]]`, rendered by `Config.specialLinkEmitter` |
 | `mexMermaid` | ```` ```mermaid ```` written as `<pre class="mermaid">` for mermaid.js |
+| `mexVideo` | `![alt](video.mp4)`: an image of a video file (`.mp4`, `.m4v`, `.webm`, `.ogv`, `.mov`) written as `<video controls>` |
 
 Math is written for KaTeX/MathJax by default; for a viewer without JavaScript (such as HTMLViewer) set `Config.MathRendering := mmrCodeCogsImage` to get `<img>` from latex.codecogs.com. Mermaid diagrams need mermaid.js in the page (e.g. WebView2); elsewhere the `<pre>` shows their source.
 
@@ -92,7 +95,7 @@ Upgrading from a previous 1.x version: read [docs/MIGRATION.md](docs/MIGRATION.m
 
 | Component | Description |
 | :---: | --- |
-| ![TMarkdownToHTML](./images/markdown-html-64.png)<br>**TMarkdownToHTML** | Non-visual component (unit `MarkdownProcessorComponents.pas`, palette page *Markdown*) that holds the options of the processor (`ProcessorDialect`, `Extensions`, `AllowUnsafe`, `MathRendering`, `CssStyle`) and converts `MarkdownContent` into `HtmlContent` every time the content or an option changes. By default it uses the GitHub dialect and enables all the legacy extensions (subscript, superscript, insert, mark, smart typography, heading ids, wiki links). |
+| ![TMarkdownToHTML](./images/markdown-html-64.png)<br>**TMarkdownToHTML** | Non-visual component (unit `MarkdownProcessorComponents.pas`, palette page *Markdown*) that holds the options of the processor (`ProcessorDialect`, `Extensions`, `AllowUnsafe`, `MathRendering`, `CssStyle`) and converts `MarkdownContent` into `HtmlContent` every time the content or an option changes. By default it uses the GitHub dialect and enables all the legacy extensions (subscript, superscript, insert, mark, smart typography, heading ids, wiki links, video). |
 
 Properties, methods and examples: [TMarkdownToHTML Component](https://ethea.it/docs/markdowntools/MarkdownProcessor/TMarkdownToHTML-Component).
 
@@ -160,6 +163,14 @@ The VCL demo in `Demo\MarkdownProcessorDemo` converts the sample document `TestF
 More details: [Markdown Processor Demo](https://ethea.it/docs/markdowntools/MarkdownProcessor/TMarkdownToHTML-Demo). Complete documentation of the library: [Markdown Processor](https://ethea.it/docs/markdowntools/MarkdownProcessor/Markdown-Processor).
 
 ## Release Notes ##
+
+14 Oct 2026: ver. 2.1.0
+- New extension `mexVideo`: an image of a video file (`![Rocket](rocket.mp4)`: `.mp4`, `.m4v`, `.webm`, `.ogv`, `.mov`) is written as `<video controls>`, with a link to the file inside for the viewers that cannot play it (HTMLViewer); enabled by default in the TMarkdownToHTML component (`LegacyExtensions`), shown also in safe mode
+- MarkDownToHTML.exe uses the same default extensions as the TMarkdownToHTML component: GitHub-style heading ids (so the links to `#a-section` of the document work), `{#id}`, subscript, superscript, insert, mark, smart typography, wiki links and video. The output changes for the documents that use that syntax (for example straight quotes become curly quotes)
+- Default stylesheet: the videos fit the width of the page
+- `MarkDown Support Test.md`: new section "Video", with a short video (`rocket.mp4`, from the "Growth Rocket" animation of LottieFiles, Lottie Simple License)
+- Demo: new checkbox "Video"
+- Tests: new examples of the videos (812 in all)
 
 08 Oct 2026: ver. 2.0.0 (major version: new CommonMark/GFM engine)
 - New engine (block parser, inline parser, HTML renderer) written after the parsing strategy of the CommonMark specification, still compatible from Delphi XE3

@@ -66,6 +66,7 @@ type
     HeadingAttributesCheckBox: TCheckBox;
     AutoHeadingIdsCheckBox: TCheckBox;
     WikiLinksCheckBox: TCheckBox;
+    VideoCheckBox: TCheckBox;
     HTMLDestMemo: TMemo;
     NotePanel: TPanel;
     NoteLinkLabel: TLinkLabel;

@@ -2,17 +2,18 @@
 <html>
 <head>
 <meta charset="utf-8">
+<title>README</title>
 <style type="text/css">
-:root{color-scheme:dark;}
-body{font-family:"Arial",sans-serif;font-size:12pt;color:#FFFFFF;background-color:#191D22;}
+:root{color-scheme:light;}
+body{font-family:"Arial",sans-serif;font-size:12pt;color:#000000;background-color:#FFFFFF;}
 a{color:#0000FF;}
 .markdown-alert>:last-child{margin-bottom:0;}
 .markdown-alert-title{margin-top:0;}
 @media print{body{color:#000;background-color:#fff;}}
 </style>
-<link rel="stylesheet" href="https://mdviewer-scripts.local/katex/katex.min.css">
-<script defer src="https://mdviewer-scripts.local/katex/katex.min.js"></script>
-<script defer src="https://mdviewer-scripts.local/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 <script>
 document.addEventListener("click",function(e){var a=e.target.closest("a");if(a){var h=a.getAttribute("href");if(h&&h.charAt(0)==="#"){e.preventDefault();var t=document.getElementById(decodeURIComponent(h.substring(1)));if(t)t.scrollIntoView();}}});
 window.addEventListener("scroll",function(){if(window.chrome&&chrome.webview)chrome.webview.postMessage("scrollY:"+Math.round(window.scrollY)+":"+Math.max(0,Math.round(document.documentElement.scrollHeight-window.innerHeight)));});
@@ -21,6 +22,10 @@ window.addEventListener("scroll",function(){if(window.chrome&&chrome.webview)chr
 <body>
 <style type="text/css">
 img{
+  max-width: 100%;
+  height: auto;
+}
+video{
   max-width: 100%;
   height: auto;
 }
@@ -112,7 +117,7 @@ pre.mermaid{
 <h1 id="markdown-processor-for-delphi-lib-component-markdowntohtmlexe-cmd">Markdown Processor for Delphi (Lib, Component, MarkDownToHTML.exe cmd).</h1>
 <p>A Markdown Processor Library for Delphi, to process/convert markdown files to HTML.</p>
 <p>A Useful utility: <strong>MarkDownToHTML.exe</strong> to transform any markdown file to HTML</p>
-<!-- raw HTML omitted -->
+<!-- badges -->
 <p><a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg" alt="License: Apache" /></a>
 <a href="https://github.com/EtheaDev/MarkdownProcessor/releases"><img src="https://img.shields.io/github/v/release/EtheaDev/MarkdownProcessor?label=release&amp;color=blue" alt="Latest release" /></a>
 <a href="https://www.embarcadero.com/products/delphi"><img src="https://img.shields.io/badge/Delphi-XE6%2B-e62329.svg" alt="Delphi XE6+" /></a>
@@ -121,8 +126,8 @@ pre.mermaid{
 <a href="https://github.github.com/gfm/"><img src="https://img.shields.io/badge/GFM-0.29%2024%2F24-24292f.svg" alt="GFM 0.29" /></a>
 <a href="https://katex.org/"><img src="https://img.shields.io/badge/Math-35%2F35-008080.svg" alt="Math formulas" /></a>
 <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts"><img src="https://img.shields.io/badge/Alerts-20%2F20-d29922.svg" alt="GitHub alerts" /></a>
-<a href="Tests/CONFORMANCE.md"><img src="https://img.shields.io/badge/Tests-804%2F804%20passing-2ea44f.svg" alt="Conformance tests" /></a></p>
-<p><img src="/images/SupportingDelphi.jpg" alt="Support Delphi" /></p>
+<a href="Tests/CONFORMANCE.md"><img src="https://img.shields.io/badge/Tests-812%2F812%20passing-2ea44f.svg" alt="Conformance tests" /></a></p>
+<p><img src="./images/SupportingDelphi.jpg" alt="Support Delphi" /></p>
 <p><a href="https://www.embarcadero.com/">www.embarcadero.com</a> - <a href="https://learndelphi.org/">learndelphi.org</a></p>
 <p>A Pascal (Delphi) library that processes markdown text/files to HTML.</p>
 <h2 id="documentation">Documentation</h2>
@@ -137,6 +142,7 @@ pre.mermaid{
 <h2 id="using-the-markdowntohtmlexe-utility">Using the MarkDownToHTML.exe utility</h2>
 <p>With MarkDownToHTML.exe you can transform a markdown file to HTML using different markdown dialects or StyleSheet.</p>
 <p>run <strong>MarkDownToHTML.exe help processfile</strong> for a complete help.</p>
+<p>The utility uses the same default extensions as the TMarkdownToHTML component: the ones of the dialect plus the legacy extensions (GitHub-style heading ids, <code>{#id}</code>, subscript, superscript, insert, mark, smart typography, wiki links, video).</p>
 <p>Look into Cmd\MarkdownToHTML\Test\MarkDownToHTML_Test.cmd for examples</p>
 <hr />
 <h2 id="basic-informations-for-delphi-users">Basic Informations for Delphi users</h2>
@@ -205,6 +211,10 @@ specification) that can also return a read-only syntax tree.</p>
 <td><code>mexMermaid</code></td>
 <td><code>```mermaid</code> written as <code>&lt;pre class=&quot;mermaid&quot;&gt;</code> for mermaid.js</td>
 </tr>
+<tr>
+<td><code>mexVideo</code></td>
+<td><code>![alt](video.mp4)</code>: an image of a video file (<code>.mp4</code>, <code>.m4v</code>, <code>.webm</code>, <code>.ogv</code>, <code>.mov</code>) written as <code>&lt;video controls&gt;</code></td>
+</tr>
 </tbody>
 </table>
 <p>Math is written for KaTeX/MathJax by default; for a viewer without JavaScript (such as HTMLViewer) set <code>Config.MathRendering := mmrCodeCogsImage</code> to get <code>&lt;img&gt;</code> from latex.codecogs.com. Mermaid diagrams need mermaid.js in the page (e.g. WebView2); elsewhere the <code>&lt;pre&gt;</code> shows their source.</p>
@@ -219,8 +229,8 @@ specification) that can also return a read-only syntax tree.</p>
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src="./images/markdown-html-64.png" alt="TMarkdownToHTML" /><!-- raw HTML omitted --><strong>TMarkdownToHTML</strong></td>
-<td>Non-visual component (unit <code>MarkdownProcessorComponents.pas</code>, palette page <em>Markdown</em>) that holds the options of the processor (<code>ProcessorDialect</code>, <code>Extensions</code>, <code>AllowUnsafe</code>, <code>MathRendering</code>, <code>CssStyle</code>) and converts <code>MarkdownContent</code> into <code>HtmlContent</code> every time the content or an option changes. By default it uses the GitHub dialect and enables all the legacy extensions (subscript, superscript, insert, mark, smart typography, heading ids, wiki links).</td>
+<td align="center"><img src="./images/markdown-html-64.png" alt="TMarkdownToHTML" /><br><strong>TMarkdownToHTML</strong></td>
+<td>Non-visual component (unit <code>MarkdownProcessorComponents.pas</code>, palette page <em>Markdown</em>) that holds the options of the processor (<code>ProcessorDialect</code>, <code>Extensions</code>, <code>AllowUnsafe</code>, <code>MathRendering</code>, <code>CssStyle</code>) and converts <code>MarkdownContent</code> into <code>HtmlContent</code> every time the content or an option changes. By default it uses the GitHub dialect and enables all the legacy extensions (subscript, superscript, insert, mark, smart typography, heading ids, wiki links, video).</td>
 </tr>
 </tbody>
 </table>
@@ -232,20 +242,20 @@ specification) that can also return a read-only syntax tree.</p>
 <li>with the <strong>TMarkdownProcessor class</strong> (unit <code>MarkdownProcessor.pas</code>): create the processor of the dialect you want, configure it and call <code>Process</code>.</li>
 </ul>
 <p>With the component:</p>
-<div style="font-family: Arial, 'Courier New', monospace; font-size: 12pt;  background-color: #191D22; color: #FFFFFF;">
-<pre><code><span>MarkdownToHTML</span><span style="color: #D4D4D4; ">.</span><span>MarkdownContent</span><span style="color: #D4D4D4; ">.</span><span>Text </span><span style="color: #D4D4D4; ">:=</span><span> MarkdownText</span><span style="color: #D4D4D4; ">;</span>
-<span>LHTMLText </span><span style="color: #D4D4D4; ">:=</span><span> MarkdownToHTML</span><span style="color: #D4D4D4; ">.</span><span>HtmlContent</span><span style="color: #D4D4D4; ">.</span><span>Text</span><span style="color: #D4D4D4; ">;</span>
+<div style="font-family: Arial, 'Courier New', monospace; font-size: 12pt;  background-color: #FFFFFF; color: #000000;">
+<pre><code><span>MarkdownToHTML</span><span style="color: #555555; ">.</span><span>MarkdownContent</span><span style="color: #555555; ">.</span><span>Text </span><span style="color: #555555; ">:=</span><span> MarkdownText</span><span style="color: #555555; ">;</span>
+<span>LHTMLText </span><span style="color: #555555; ">:=</span><span> MarkdownToHTML</span><span style="color: #555555; ">.</span><span>HtmlContent</span><span style="color: #555555; ">.</span><span>Text</span><span style="color: #555555; ">;</span>
 </code></pre>
 </div>
 <p>With the class:</p>
-<div style="font-family: Arial, 'Courier New', monospace; font-size: 12pt;  background-color: #191D22; color: #FFFFFF;">
-<pre><code><span>md </span><span style="color: #D4D4D4; ">:=</span><span> TMarkdownProcessor</span><span style="color: #D4D4D4; ">.</span><span>CreateDialect</span><span style="color: #D4D4D4; ">;</span><span>   </span><span style="color: #6A9955; font-style: italic; ">// mdGitHub, or pass the dialect</span>
-<span style="color: #569CD6; font-weight: bold; ">try</span>
-<span>  md</span><span style="color: #D4D4D4; ">.</span><span>Config</span><span style="color: #D4D4D4; ">.</span><span>Extensions </span><span style="color: #D4D4D4; ">:=</span><span> md</span><span style="color: #D4D4D4; ">.</span><span>Config</span><span style="color: #D4D4D4; ">.</span><span>Extensions </span><span style="color: #D4D4D4; ">+</span><span> </span><span style="color: #D4D4D4; ">[</span><span>mexMark</span><span style="color: #D4D4D4; ">];</span><span>  </span><span style="color: #6A9955; font-style: italic; ">// optional syntax</span>
-<span>  LHTMLText </span><span style="color: #D4D4D4; ">:=</span><span> md</span><span style="color: #D4D4D4; ">.</span><span>Process</span><span style="color: #D4D4D4; ">(</span><span>markdown</span><span style="color: #D4D4D4; ">);</span><span>           </span><span style="color: #6A9955; font-style: italic; ">// an HTML fragment, not a full page</span>
-<span style="color: #569CD6; font-weight: bold; ">finally</span>
-<span>  md</span><span style="color: #D4D4D4; ">.</span><span>Free</span><span style="color: #D4D4D4; ">;</span>
-<span style="color: #569CD6; font-weight: bold; ">end</span><span style="color: #D4D4D4; ">;</span>
+<div style="font-family: Arial, 'Courier New', monospace; font-size: 12pt;  background-color: #FFFFFF; color: #000000;">
+<pre><code><span>md </span><span style="color: #555555; ">:=</span><span> TMarkdownProcessor</span><span style="color: #555555; ">.</span><span>CreateDialect</span><span style="color: #555555; ">;</span><span>   </span><span style="color: #008000; font-style: italic; ">// mdGitHub, or pass the dialect</span>
+<span style="color: #0000FF; font-weight: bold; ">try</span>
+<span>  md</span><span style="color: #555555; ">.</span><span>Config</span><span style="color: #555555; ">.</span><span>Extensions </span><span style="color: #555555; ">:=</span><span> md</span><span style="color: #555555; ">.</span><span>Config</span><span style="color: #555555; ">.</span><span>Extensions </span><span style="color: #555555; ">+</span><span> </span><span style="color: #555555; ">[</span><span>mexMark</span><span style="color: #555555; ">];</span><span>  </span><span style="color: #008000; font-style: italic; ">// optional syntax</span>
+<span>  LHTMLText </span><span style="color: #555555; ">:=</span><span> md</span><span style="color: #555555; ">.</span><span>Process</span><span style="color: #555555; ">(</span><span>markdown</span><span style="color: #555555; ">);</span><span>           </span><span style="color: #008000; font-style: italic; ">// an HTML fragment, not a full page</span>
+<span style="color: #0000FF; font-weight: bold; ">finally</span>
+<span>  md</span><span style="color: #555555; ">.</span><span>Free</span><span style="color: #555555; ">;</span>
+<span style="color: #0000FF; font-weight: bold; ">end</span><span style="color: #555555; ">;</span>
 </code></pre>
 </div>
 <p>Safe mode is the default (<code>AllowUnsafe = False</code>): set it to <code>True</code> only with trusted content.</p>
@@ -274,6 +284,15 @@ that the output of the legacy dialects does not change. The results are in
 <p><img src="./images/MarkdownProcessorDemo.png" alt="Markdown Processor Demo" /></p>
 <p>More details: <a href="https://ethea.it/docs/markdowntools/MarkdownProcessor/TMarkdownToHTML-Demo">Markdown Processor Demo</a>. Complete documentation of the library: <a href="https://ethea.it/docs/markdowntools/MarkdownProcessor/Markdown-Processor">Markdown Processor</a>.</p>
 <h2 id="release-notes">Release Notes</h2>
+<p>14 Oct 2026: ver. 2.1.0</p>
+<ul>
+<li>New extension <code>mexVideo</code>: an image of a video file (<code>![Rocket](rocket.mp4)</code>: <code>.mp4</code>, <code>.m4v</code>, <code>.webm</code>, <code>.ogv</code>, <code>.mov</code>) is written as <code>&lt;video controls&gt;</code>, with a link to the file inside for the viewers that cannot play it (HTMLViewer); enabled by default in the TMarkdownToHTML component (<code>LegacyExtensions</code>), shown also in safe mode</li>
+<li>MarkDownToHTML.exe uses the same default extensions as the TMarkdownToHTML component: GitHub-style heading ids (so the links to <code>#a-section</code> of the document work), <code>{#id}</code>, subscript, superscript, insert, mark, smart typography, wiki links and video. The output changes for the documents that use that syntax (for example straight quotes become curly quotes)</li>
+<li>Default stylesheet: the videos fit the width of the page</li>
+<li><code>MarkDown Support Test.md</code>: new section “Video”, with a short video (<code>rocket.mp4</code>, from the “Growth Rocket” animation of LottieFiles, Lottie Simple License)</li>
+<li>Demo: new checkbox “Video”</li>
+<li>Tests: new examples of the videos (812 in all)</li>
+</ul>
 <p>08 Oct 2026: ver. 2.0.0 (major version: new CommonMark/GFM engine)</p>
 <ul>
 <li>New engine (block parser, inline parser, HTML renderer) written after the parsing strategy of the CommonMark specification, still compatible from Delphi XE3</li>

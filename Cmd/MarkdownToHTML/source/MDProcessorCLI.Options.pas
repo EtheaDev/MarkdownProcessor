@@ -104,6 +104,7 @@ uses
   System.Classes,
   MarkdownProcessor,
   MarkdownUtils,
+  MarkdownProcessorComponents,
   MDProcessorCLI.ResourceStrings,
   MDProcessorCLI.Console;
 
@@ -121,6 +122,7 @@ end;
 class procedure TOptionsForProcessFile.Execute;
 var
   LProcessor: TMarkdownProcessor;
+  LDialect: TMarkdownProcessorDialect;
   LStyleContent, LHTMLContent: string;
   LStringStream: TStringStream;
 
@@ -128,13 +130,17 @@ begin
   TConsole.LogInfoSuccess(StrStartCommand, PROCESSFILE_COMMAND, True);
 
   case ProcessorDialect of
-    DaringFireball: LProcessor := TMarkdownProcessor.CreateDialect(mdDaringFireball);
-    TxtMark: LProcessor := TMarkdownProcessor.CreateDialect(mdTxtMark);
-    GFM: LProcessor := TMarkdownProcessor.CreateDialect(mdGFM);
-    CommonMark: LProcessor := TMarkdownProcessor.CreateDialect(mdCommonMark);
+    DaringFireball: LDialect := mdDaringFireball;
+    TxtMark: LDialect := mdTxtMark;
+    GFM: LDialect := mdGFM;
+    CommonMark: LDialect := mdCommonMark;
   else //GitHub (default)
-    LProcessor := TMarkdownProcessor.CreateDialect(mdGitHub);
+    LDialect := mdGitHub;
   end;
+  LProcessor := TMarkdownProcessor.CreateDialect(LDialect);
+  //The extensions of the dialect and the ones of the Markdown Processor, as
+  //the TMarkdownToHTML component and the viewers (heading ids, video...)
+  LProcessor.Config.Extensions := TCustomMarkdownToHTML.DefaultExtensions(LDialect);
   //The output is a standalone page without scripts: math as images (as the
   //previous versions did), mermaid diagrams as their source
   LProcessor.Config.MathRendering := mmrCodeCogsImage;

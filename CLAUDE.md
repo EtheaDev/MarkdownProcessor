@@ -41,6 +41,8 @@ The DUnitX suite (Delphi 13, Win32 + Win64) is in `Tests/`: run `Tests\RunTests.
 
 The CLI also has smoke runs in `Cmd\MarkdownToHTML\Test\MarkDownToHTML_Test.cmd`, which exercises the built EXE against `TestFile/` (help output, default CommonMark dialect, DaringFireball, custom stylesheet, `-style:none`). Run it after building to sanity-check the CLI.
 
+The CLI converts with `TCustomMarkdownToHTML.DefaultExtensions(dialect)`, the same default extensions as the component (dialect + `LegacyExtensions`).
+
 CLI usage: `MarkDownToHTML.exe processfile -in:<file.md> [-out:<file.html>] [-dialect:GitHub|CommonMark|GFM|DaringFireball|TxtMark] [-style:<file.css>|none] [-unsafe]`. Run `MarkDownToHTML.exe help processfile` for full help. The `-unsafe` flag maps to `TMarkdownProcessor.AllowUnsafe` (off by default → active HTML is omitted by CommonMark/GFM, escaped by DaringFireball/TxtMark).
 
 ## Library architecture
