@@ -164,6 +164,10 @@ More details: [Markdown Processor Demo](https://ethea.it/docs/markdowntools/Mark
 
 ## Release Notes ##
 
+22 Oct 2026: ver. 2.1.1
+- DaringFireball and TxtMark dialects: fixed a stack overflow with long documents (many lines or many paragraphs): the lists of lines and blocks of the legacy engine are freed in a loop instead of by recursion
+- Tests: a long document converted with the legacy dialects
+
 14 Oct 2026: ver. 2.1.0
 - New extension `mexVideo`: an image of a video file (`![Rocket](rocket.mp4)`: `.mp4`, `.m4v`, `.webm`, `.ogv`, `.mov`) is written as `<video controls>`, with a link to the file inside for the viewers that cannot play it (HTMLViewer); enabled by default in the TMarkdownToHTML component (`LegacyExtensions`), shown also in safe mode
 - MarkDownToHTML.exe uses the same default extensions as the TMarkdownToHTML component: GitHub-style heading ids (so the links to `#a-section` of the document work), `{#id}`, subscript, superscript, insert, mark, smart typography, wiki links and video. The output changes for the documents that use that syntax (for example straight quotes become curly quotes)

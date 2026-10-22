@@ -1,26 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>README</title>
 <style type="text/css">
-:root{color-scheme:light;}
-body{font-family:"Arial",sans-serif;font-size:12pt;color:#000000;background-color:#FFFFFF;}
-a{color:#0000FF;}
-.markdown-alert>:last-child{margin-bottom:0;}
-.markdown-alert-title{margin-top:0;}
-@media print{body{color:#000;background-color:#fff;}}
-</style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
-<script>
-document.addEventListener("click",function(e){var a=e.target.closest("a");if(a){var h=a.getAttribute("href");if(h&&h.charAt(0)==="#"){e.preventDefault();var t=document.getElementById(decodeURIComponent(h.substring(1)));if(t)t.scrollIntoView();}}});
-window.addEventListener("scroll",function(){if(window.chrome&&chrome.webview)chrome.webview.postMessage("scrollY:"+Math.round(window.scrollY)+":"+Math.max(0,Math.round(document.documentElement.scrollHeight-window.innerHeight)));});
-</script>
-</head>
-<body>
-<style type="text/css">
+body{
+  font-family: Arial, sans-serif;
+}
 img{
   max-width: 100%;
   height: auto;
@@ -117,7 +98,7 @@ pre.mermaid{
 <h1 id="markdown-processor-for-delphi-lib-component-markdowntohtmlexe-cmd">Markdown Processor for Delphi (Lib, Component, MarkDownToHTML.exe cmd).</h1>
 <p>A Markdown Processor Library for Delphi, to process/convert markdown files to HTML.</p>
 <p>A Useful utility: <strong>MarkDownToHTML.exe</strong> to transform any markdown file to HTML</p>
-<!-- badges -->
+<!-- raw HTML omitted -->
 <p><a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg" alt="License: Apache" /></a>
 <a href="https://github.com/EtheaDev/MarkdownProcessor/releases"><img src="https://img.shields.io/github/v/release/EtheaDev/MarkdownProcessor?label=release&amp;color=blue" alt="Latest release" /></a>
 <a href="https://www.embarcadero.com/products/delphi"><img src="https://img.shields.io/badge/Delphi-XE6%2B-e62329.svg" alt="Delphi XE6+" /></a>
@@ -229,7 +210,7 @@ specification) that can also return a read-only syntax tree.</p>
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src="./images/markdown-html-64.png" alt="TMarkdownToHTML" /><br><strong>TMarkdownToHTML</strong></td>
+<td align="center"><img src="./images/markdown-html-64.png" alt="TMarkdownToHTML" /><!-- raw HTML omitted --><strong>TMarkdownToHTML</strong></td>
 <td>Non-visual component (unit <code>MarkdownProcessorComponents.pas</code>, palette page <em>Markdown</em>) that holds the options of the processor (<code>ProcessorDialect</code>, <code>Extensions</code>, <code>AllowUnsafe</code>, <code>MathRendering</code>, <code>CssStyle</code>) and converts <code>MarkdownContent</code> into <code>HtmlContent</code> every time the content or an option changes. By default it uses the GitHub dialect and enables all the legacy extensions (subscript, superscript, insert, mark, smart typography, heading ids, wiki links, video).</td>
 </tr>
 </tbody>
@@ -242,22 +223,18 @@ specification) that can also return a read-only syntax tree.</p>
 <li>with the <strong>TMarkdownProcessor class</strong> (unit <code>MarkdownProcessor.pas</code>): create the processor of the dialect you want, configure it and call <code>Process</code>.</li>
 </ul>
 <p>With the component:</p>
-<div style="font-family: Arial, 'Courier New', monospace; font-size: 12pt;  background-color: #FFFFFF; color: #000000;">
-<pre><code><span>MarkdownToHTML</span><span style="color: #555555; ">.</span><span>MarkdownContent</span><span style="color: #555555; ">.</span><span>Text </span><span style="color: #555555; ">:=</span><span> MarkdownText</span><span style="color: #555555; ">;</span>
-<span>LHTMLText </span><span style="color: #555555; ">:=</span><span> MarkdownToHTML</span><span style="color: #555555; ">.</span><span>HtmlContent</span><span style="color: #555555; ">.</span><span>Text</span><span style="color: #555555; ">;</span>
+<pre><code class="language-Pascal">MarkdownToHTML.MarkdownContent.Text := MarkdownText;
+LHTMLText := MarkdownToHTML.HtmlContent.Text;
 </code></pre>
-</div>
 <p>With the class:</p>
-<div style="font-family: Arial, 'Courier New', monospace; font-size: 12pt;  background-color: #FFFFFF; color: #000000;">
-<pre><code><span>md </span><span style="color: #555555; ">:=</span><span> TMarkdownProcessor</span><span style="color: #555555; ">.</span><span>CreateDialect</span><span style="color: #555555; ">;</span><span>   </span><span style="color: #008000; font-style: italic; ">// mdGitHub, or pass the dialect</span>
-<span style="color: #0000FF; font-weight: bold; ">try</span>
-<span>  md</span><span style="color: #555555; ">.</span><span>Config</span><span style="color: #555555; ">.</span><span>Extensions </span><span style="color: #555555; ">:=</span><span> md</span><span style="color: #555555; ">.</span><span>Config</span><span style="color: #555555; ">.</span><span>Extensions </span><span style="color: #555555; ">+</span><span> </span><span style="color: #555555; ">[</span><span>mexMark</span><span style="color: #555555; ">];</span><span>  </span><span style="color: #008000; font-style: italic; ">// optional syntax</span>
-<span>  LHTMLText </span><span style="color: #555555; ">:=</span><span> md</span><span style="color: #555555; ">.</span><span>Process</span><span style="color: #555555; ">(</span><span>markdown</span><span style="color: #555555; ">);</span><span>           </span><span style="color: #008000; font-style: italic; ">// an HTML fragment, not a full page</span>
-<span style="color: #0000FF; font-weight: bold; ">finally</span>
-<span>  md</span><span style="color: #555555; ">.</span><span>Free</span><span style="color: #555555; ">;</span>
-<span style="color: #0000FF; font-weight: bold; ">end</span><span style="color: #555555; ">;</span>
+<pre><code class="language-Pascal">md := TMarkdownProcessor.CreateDialect;   // mdGitHub, or pass the dialect
+try
+  md.Config.Extensions := md.Config.Extensions + [mexMark];  // optional syntax
+  LHTMLText := md.Process(markdown);           // an HTML fragment, not a full page
+finally
+  md.Free;
+end;
 </code></pre>
-</div>
 <p>Safe mode is the default (<code>AllowUnsafe = False</code>): set it to <code>True</code> only with trusted content.</p>
 <p>The complete guide (dialects, extensions, math and mermaid, syntax tree, hooks, safe mode) is in the online documentation:
 <a href="https://ethea.it/docs/markdowntools/MarkdownProcessor/Markdown-Processor">Markdown Processor</a> and <a href="https://ethea.it/docs/markdowntools/MarkdownProcessor/TMarkdownToHTML-Component">TMarkdownToHTML Component</a>.</p>
@@ -284,6 +261,11 @@ that the output of the legacy dialects does not change. The results are in
 <p><img src="./images/MarkdownProcessorDemo.png" alt="Markdown Processor Demo" /></p>
 <p>More details: <a href="https://ethea.it/docs/markdowntools/MarkdownProcessor/TMarkdownToHTML-Demo">Markdown Processor Demo</a>. Complete documentation of the library: <a href="https://ethea.it/docs/markdowntools/MarkdownProcessor/Markdown-Processor">Markdown Processor</a>.</p>
 <h2 id="release-notes">Release Notes</h2>
+<p>22 Oct 2026: ver. 2.1.1</p>
+<ul>
+<li>DaringFireball and TxtMark dialects: fixed a stack overflow with long documents (many lines or many paragraphs): the lists of lines and blocks of the legacy engine are freed in a loop instead of by recursion</li>
+<li>Tests: a long document converted with the legacy dialects</li>
+</ul>
 <p>14 Oct 2026: ver. 2.1.0</p>
 <ul>
 <li>New extension <code>mexVideo</code>: an image of a video file (<code>![Rocket](rocket.mp4)</code>: <code>.mp4</code>, <code>.m4v</code>, <code>.webm</code>, <code>.ogv</code>, <code>.mov</code>) is written as <code>&lt;video controls&gt;</code>, with a link to the file inside for the viewers that cannot play it (HTMLViewer); enabled by default in the TMarkdownToHTML component (<code>LegacyExtensions</code>), shown also in safe mode</li>
@@ -326,7 +308,7 @@ that the output of the legacy dialects does not change. The results are in
 <li>Added “-unsafe” command line option to MarkDownToHTML.exe (safe mode is the default)</li>
 <li>Fixed safe mode: unsafe HTML elements (script, iframe, object, applet, frame…) are now correctly escaped</li>
 <li>Math formulas: replaced the deprecated Google Chart API with the CodeCogs LaTeX renderer</li>
-<li>Math formulas: added support for centered formula blocks using the <span class="math">\[...\]</span> syntax</li>
+<li>Math formulas: added support for centered formula blocks using the <img class="math" src="https://latex.codecogs.com/png.image?..." alt="..." /> syntax</li>
 <li>Improved tables support</li>
 <li>TUtils.codeEncode now encodes spaces as %20</li>
 <li>Aligned with upstream FPC-markdown by Miguel A. Risco-Castillo</li>
@@ -370,5 +352,3 @@ that the output of the legacy dialects does not change. The results are in
 <p>It also uses <strong>CommandLineParser</strong></p>
 <p><a href="https://github.com/VSoftTechnologies/VSoft.CommandLineParser">VSoft.CommandLineParser</a></p>
 <p>by <em>Vincent Parret</em>, licensed under the Apache License, Version 2.0 (the “License”);</p>
-</body>
-</html>

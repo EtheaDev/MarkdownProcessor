@@ -72,6 +72,13 @@ type
     [TestCase('www autolinks', 'www autolinks')]
     [TestCase('long paragraph', 'long paragraph')]
     procedure Performance_Pathological_WithinBudget(const CaseName: string);
+
+    // the legacy engine frees its lists of lines and blocks: a long document
+    // overflowed the stack (recursive TLine/TBlock destructors)
+    [Test]
+    [TestCase('DaringFireball', 'DaringFireball')]
+    [TestCase('TxtMark', 'TxtMark')]
+    procedure Legacy_LongDocument_NoStackOverflow(const DialectName: string);
   end;
 
 implementation
@@ -226,6 +233,26 @@ begin
     Format('%s: %d ms for %d characters (budget %d ms)',
       [CaseName, Watch.ElapsedMilliseconds, Length(Input), BudgetMilliseconds]));
   TDUnitX.CurrentRunner.Log(TLogLevel.Information, Format('%s: %d ms', [CaseName, Watch.ElapsedMilliseconds]));
+end;
+
+procedure TPerformanceTests.Legacy_LongDocument_NoStackOverflow(const DialectName: string);
+var
+  Processor: TMarkdownProcessor;
+  Html: string;
+begin
+  if DialectName = 'TxtMark' then
+    Processor := TMarkdownProcessor.CreateDialect(mdTxtMark)
+  else
+    Processor := TMarkdownProcessor.CreateDialect(mdDaringFireball);
+  try
+    // a paragraph of many lines (list of TLine), then many paragraphs (list
+    // of TBlock)
+    Html := Processor.Process(Rep('a line of text'#10, 100000) +
+      #10 + Rep('a paragraph'#10#10, 50000));
+  finally
+    Processor.Free;
+  end;
+  Assert.IsTrue(Pos('<p>a paragraph</p>', Html) > 0, 'Missing paragraphs');
 end;
 
 initialization

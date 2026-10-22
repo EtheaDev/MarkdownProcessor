@@ -49,7 +49,9 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_MajorVer>2</VerInfo_MajorVer>
-        <VerInfo_Keys>CompanyName=Ethea S.r.l.;FileDescription=Markdown Processor Demo;FileVersion=2.1.0.0;InternalName=MarkdownProcessorDemo;LegalCopyright=Copyright (c) Ethea S.r.l.;LegalTrademarks=;OriginalFilename=MarkdownProcessorDemo.exe;ProgramID=;ProductName=Markdown Processor;ProductVersion=2.1;Comments=</VerInfo_Keys>
+        <VerInfo_MinorVer>1</VerInfo_MinorVer>
+        <VerInfo_Release>1</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=Ethea S.r.l.;FileDescription=Markdown Processor Demo;FileVersion=2.1.1.0;InternalName=MarkdownProcessorDemo;LegalCopyright=Copyright (c) Ethea S.r.l.;LegalTrademarks=;OriginalFilename=MarkdownProcessorDemo.exe;ProgramID=;ProductName=Markdown Processor;ProductVersion=2.1.1;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
